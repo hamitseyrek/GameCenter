@@ -13,6 +13,7 @@
 		5ED4CCC627DFDBC800591932 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ED4CCC527DFDBC800591932 /* Preview Assets.xcassets */; };
 		5ED4CCCD27E0E4DC00591932 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4CCCC27E0E4DC00591932 /* GameView.swift */; };
 		5ED4CCCF27E0E68A00591932 /* GameButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4CCCE27E0E68A00591932 /* GameButtonView.swift */; };
+		5ED4CCD127E0E89700591932 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4CCD027E0E89700591932 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		5ED4CCC527DFDBC800591932 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5ED4CCCC27E0E4DC00591932 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		5ED4CCCE27E0E68A00591932 /* GameButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButtonView.swift; sourceTree = "<group>"; };
+		5ED4CCD027E0E89700591932 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				5ED4CCBE27DFDBC600591932 /* OnlineTicTacToeGameApp.swift */,
 				5ED4CCCC27E0E4DC00591932 /* GameView.swift */,
+				5ED4CCD027E0E89700591932 /* HomeViewModel.swift */,
 				5ED4CCCE27E0E68A00591932 /* GameButtonView.swift */,
 				5ED4CCC027DFDBC600591932 /* HomeView.swift */,
 				5ED4CCC227DFDBC800591932 /* Assets.xcassets */,
@@ -146,6 +149,7 @@
 				5ED4CCCF27E0E68A00591932 /* GameButtonView.swift in Sources */,
 				5ED4CCC127DFDBC600591932 /* HomeView.swift in Sources */,
 				5ED4CCCD27E0E4DC00591932 /* GameView.swift in Sources */,
+				5ED4CCD127E0E89700591932 /* HomeViewModel.swift in Sources */,
 				5ED4CCBF27DFDBC600591932 /* OnlineTicTacToeGameApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
