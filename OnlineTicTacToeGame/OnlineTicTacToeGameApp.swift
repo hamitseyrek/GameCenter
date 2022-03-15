@@ -11,7 +11,7 @@ import SwiftUI
 struct OnlineTicTacToeGameApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }
