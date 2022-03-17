@@ -32,10 +32,10 @@ struct GameView: View {
                         ForEach (0..<9) { i in
                             ZStack {
                                 GameSquareView(proxy: geometry)
-                                PlayerIndicatorView(proxy: geometry, systemImageName: "applelogo")
+                                PlayerIndicatorView(proxy: geometry, systemImageName: gameViewModel.game.moves[i]?.indicator ?? "applelogo")
                             }
                             .onTapGesture {
-                                print("tapppp!!! \(i)")
+                                gameViewModel.processPlayerOne(for: i)
                             }
                         }
                     }

@@ -13,7 +13,6 @@ struct GameModel: Codable, Identifiable {
     var playerTwoID: String
     var blockMoveForPlayerID: String
     var winnerID: String
-    var rematchPlayerID: String
-    
-    var moves: [MoveModel]
+    var rematchPlayerID: [String]
+    var moves: [MoveModel?]
 }
