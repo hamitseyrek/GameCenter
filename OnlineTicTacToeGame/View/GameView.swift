@@ -21,7 +21,7 @@ struct GameView: View {
                     GameButtonView(title: "Quit", backgroundColor: .red)
                 }
                 
-                Text("Loading View")
+                LoadingView()
                 
                 Spacer()
                 

@@ -18,9 +18,9 @@ struct HomeView: View {
                 GameButtonView(title: "Play", backgroundColor: Color.green)
             }
         }
-        .fullScreenCover(isPresented: $homeViewModel.isGameviewPresented) {
+        .fullScreenCover(isPresented: $homeViewModel.isGameviewPresented, content: {
             GameView()
-        }
+        })
     }
 }
 
