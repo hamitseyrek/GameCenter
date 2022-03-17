@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct GameView: View {
-    let gridColumns: [GridItem] = [GridItem(.flexible(minimum: 10, maximum: 300)),GridItem(.flexible(minimum: 10, maximum: 300)),GridItem(.flexible(minimum: 10, maximum: 300))]
+    
+    @ObservedObject var gameViewModel: GameViewModel
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         GeometryReader { geometry in
@@ -26,7 +28,7 @@ struct GameView: View {
                 Spacer()
                 
                 VStack {
-                    LazyVGrid(columns: gridColumns) {
+                    LazyVGrid(columns: gameViewModel.gridColumns) {
                         ForEach (0..<9) { i in
                             ZStack {
                                 GameSquareView(proxy: geometry)
@@ -46,6 +48,6 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView()
+        GameView(gameViewModel: GameViewModel())
     }
 }
