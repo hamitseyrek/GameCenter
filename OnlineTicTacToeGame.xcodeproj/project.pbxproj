@@ -14,6 +14,10 @@
 		5EBB049F27E3B1920056CD58 /* MoveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB049E27E3B1920056CD58 /* MoveModel.swift */; };
 		5EBB04A127E3B3730056CD58 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB04A027E3B3730056CD58 /* GameModel.swift */; };
 		5EBB04A327E504610056CD58 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB04A227E504610056CD58 /* UserModel.swift */; };
+		5EBB04A627E5D7D40056CD58 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5EBB04A527E5D7D40056CD58 /* FirebaseAuth */; };
+		5EBB04A827E5D7D40056CD58 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5EBB04A727E5D7D40056CD58 /* FirebaseFirestore */; };
+		5EBB04AA27E5D7D40056CD58 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 5EBB04A927E5D7D40056CD58 /* FirebaseFirestoreSwift-Beta */; };
+		5EBB04AC27E5D8E50056CD58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EBB04AB27E5D8E50056CD58 /* GoogleService-Info.plist */; };
 		5ED4CCBF27DFDBC600591932 /* OnlineTicTacToeGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4CCBE27DFDBC600591932 /* OnlineTicTacToeGameApp.swift */; };
 		5ED4CCC127DFDBC600591932 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4CCC027DFDBC600591932 /* HomeView.swift */; };
 		5ED4CCC327DFDBC800591932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ED4CCC227DFDBC800591932 /* Assets.xcassets */; };
@@ -31,6 +35,7 @@
 		5EBB049E27E3B1920056CD58 /* MoveModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveModel.swift; sourceTree = "<group>"; };
 		5EBB04A027E3B3730056CD58 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		5EBB04A227E504610056CD58 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		5EBB04AB27E5D8E50056CD58 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5ED4CCBB27DFDBC600591932 /* OnlineTicTacToeGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineTicTacToeGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED4CCBE27DFDBC600591932 /* OnlineTicTacToeGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineTicTacToeGameApp.swift; sourceTree = "<group>"; };
 		5ED4CCC027DFDBC600591932 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -46,6 +51,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EBB04AA27E5D7D40056CD58 /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				5EBB04A627E5D7D40056CD58 /* FirebaseAuth in Frameworks */,
+				5EBB04A827E5D7D40056CD58 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +123,7 @@
 				5EBB049227E23D050056CD58 /* Component */,
 				5EBB049427E23D400056CD58 /* ViewModel */,
 				5ED4CCBE27DFDBC600591932 /* OnlineTicTacToeGameApp.swift */,
+				5EBB04AB27E5D8E50056CD58 /* GoogleService-Info.plist */,
 				5ED4CCC227DFDBC800591932 /* Assets.xcassets */,
 				5ED4CCC427DFDBC800591932 /* Preview Content */,
 			);
@@ -145,6 +154,11 @@
 			dependencies = (
 			);
 			name = OnlineTicTacToeGame;
+			packageProductDependencies = (
+				5EBB04A527E5D7D40056CD58 /* FirebaseAuth */,
+				5EBB04A727E5D7D40056CD58 /* FirebaseFirestore */,
+				5EBB04A927E5D7D40056CD58 /* FirebaseFirestoreSwift-Beta */,
+			);
 			productName = OnlineTicTacToeGame;
 			productReference = 5ED4CCBB27DFDBC600591932 /* OnlineTicTacToeGame.app */;
 			productType = "com.apple.product-type.application";
@@ -173,6 +187,9 @@
 				Base,
 			);
 			mainGroup = 5ED4CCB227DFDBC600591932;
+			packageReferences = (
+				5EBB04A427E5D7D40056CD58 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 5ED4CCBC27DFDBC600591932 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -189,6 +206,7 @@
 			files = (
 				5ED4CCC627DFDBC800591932 /* Preview Assets.xcassets in Resources */,
 				5ED4CCC327DFDBC800591932 /* Assets.xcassets in Resources */,
+				5EBB04AC27E5D8E50056CD58 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +433,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5EBB04A427E5D7D40056CD58 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5EBB04A527E5D7D40056CD58 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5EBB04A427E5D7D40056CD58 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		5EBB04A727E5D7D40056CD58 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5EBB04A427E5D7D40056CD58 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		5EBB04A927E5D7D40056CD58 /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5EBB04A427E5D7D40056CD58 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5ED4CCB327DFDBC600591932 /* Project object */;
 }
