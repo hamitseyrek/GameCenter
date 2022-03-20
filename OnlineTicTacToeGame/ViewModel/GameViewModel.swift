@@ -6,15 +6,17 @@
 //
 
 import SwiftUI
+import Combine
 
 final class GameViewModel: ObservableObject {
     @AppStorage("user") private var userData: Data?
     
     let gridColumns: [GridItem] = [GridItem(.flexible(minimum: 10, maximum: 300)),GridItem(.flexible(minimum: 10, maximum: 300)),GridItem(.flexible(minimum: 10, maximum: 300))]
     
-    @Published var game = GameModel(id: UUID(), playerOneID: "player1", playerTwoID: "player2", blockMoveForPlayerID: "player1", winnerID: "", rematchPlayerID: [], moves: Array(repeating: nil, count: 9))
-    
+    @Published var game: GameModel?
+    //GameModel(id: UUID(), playerOneID: "player1", playerTwoID: "player2", blockMoveForPlayerID: "player1", winnerID: "", rematchPlayerID: [], moves: Array(repeating: nil, count: 9))
     @Published var currentUser: UserModel!
+    private var cancellable: Set<AnyCancellable> = []
     
     private let winPattern: Set<Set<Int>> = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
     
@@ -27,6 +29,8 @@ final class GameViewModel: ObservableObject {
     }
     
     func processPlayerOne(for position: Int) {
+        guard var game = game else { return }
+
         if isSquareOccupied(in: game.moves, forIndex: position) { return }
         
         game.moves[position] = MoveModel(isPlayerOne: true, boardIndex: position)
@@ -84,5 +88,16 @@ final class GameViewModel: ObservableObject {
         } catch {
             print("no user data")
         }
+    }
+    
+    func getTheGame() {
+        FirebaseService.shared.startGame(with: currentUser.id)
+        FirebaseService.shared.$game
+            .assign(to: \.game, on: self)
+            .store(in: &cancellable)
+    }
+    
+    func quiteTheGame() {
+        FirebaseService.shared.quiteTheGame()
     }
 }

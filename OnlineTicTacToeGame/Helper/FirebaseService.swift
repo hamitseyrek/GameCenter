@@ -17,7 +17,11 @@ final class FirebaseService:ObservableObject {
     init() { }
     
     func createOnlineGame() {
-        // save the game to online
+        do {
+            try FirebaseReference(.Game).document(self.game.id.uuidString).setData(from: self.game)
+        } catch {
+            print("Error in creating online game")
+        }
     }
     
     func updateOnlineGame(_ game: GameModel) {
@@ -54,10 +58,15 @@ final class FirebaseService:ObservableObject {
     
     func createNewGame(with userID: String) {
         // create new game object
+        print("creating gar for userid:", userID)
         
+        self.game = GameModel(id: UUID(), playerOneID: userID, playerTwoID: "", blockMoveForPlayerID: userID, winnerID: "", rematchPlayerID: [], moves: Array(repeating: nil, count: 9))
+        self.createOnlineGame()
+        self.listenForGameChanges()
     }
     
     func quiteTheGame() {
-        
+        guard game != nil else { return }
+        FirebaseReference(.Game).document(self.game.id.uuidString).delete()
     }
 }
