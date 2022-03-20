@@ -30,22 +30,31 @@ final class GameViewModel: ObservableObject {
     
     func processPlayerOne(for position: Int) {
         guard var game = game else { return }
-
+        
         if isSquareOccupied(in: game.moves, forIndex: position) { return }
         
         game.moves[position] = MoveModel(isPlayerOne: true, boardIndex: position)
+        game.blockMoveForPlayerID = currentUser.id
         
-        game.blockMoveForPlayerID = "player2"
+        FirebaseService.shared.updateOnlineGame(game)
         
         if checkForWinCondition(for: true, in: game.moves) {
+            game.winnerID = currentUser.id
+            FirebaseService.shared.updateOnlineGame(game)
             print("winnerrrrr")
             return
         }
         
         if checkForDraw(in: game.moves) {
+            game.winnerID =  "0"
+            FirebaseService.shared.updateOnlineGame(game)
             print("draww")
             return
         }
+    }
+    
+    func checkForGameBoardStatus() -> Bool {
+        return game != nil ? game!.blockMoveForPlayerID == currentUser.id : false
     }
     
     func isSquareOccupied(in moves: [MoveModel?], forIndex index: Int) -> Bool {

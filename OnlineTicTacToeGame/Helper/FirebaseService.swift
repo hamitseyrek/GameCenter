@@ -25,7 +25,11 @@ final class FirebaseService:ObservableObject {
     }
     
     func updateOnlineGame(_ game: GameModel) {
-        
+        do {
+            try FirebaseReference(.Game).document(game.id.uuidString).setData(from: game)
+        } catch {
+            print("Error in creating online game: ", error.localizedDescription)
+        }
     }
     
     func startGame(with userID: String) {
@@ -53,7 +57,17 @@ final class FirebaseService:ObservableObject {
     }
     
     func listenForGameChanges() {
-        
+        FirebaseReference(.Game).document(self.game.id.uuidString).addSnapshotListener { documentSnapshot, error in
+            if error != nil {
+                print("Error is here 33: ", error?.localizedDescription ?? "")
+                return
+            }
+            
+            if let snapshot = documentSnapshot {
+                self.game = try? snapshot.data(as: GameModel.self)
+            }
+            return
+        }
     }
     
     func createNewGame(with userID: String) {
