@@ -15,7 +15,9 @@ struct GameView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                Text("Waiting forthe player")
+                if gameViewModel.game?.playerTwoID == "" {
+                    Text("Waiting for the player")
+                }
                 
                 Button {
                     presentationMode.wrappedValue.dismiss()
@@ -24,7 +26,9 @@ struct GameView: View {
                     GameButtonView(title: "Quit", backgroundColor: .red)
                 }
                 
-                LoadingView()
+                if gameViewModel.game?.playerTwoID == "" {
+                    LoadingView()
+                }
                 
                 Spacer()
                 
@@ -43,6 +47,20 @@ struct GameView: View {
                 }
                 .disabled(gameViewModel.checkForGameBoardStatus())
                 .padding()
+                .alert(item: $gameViewModel.alertItem) { alertItem in
+                    alertItem.isForQuit ?
+                    Alert(title: alertItem.title, message: alertItem.message, dismissButton: .destructive(alertItem.buttonText, action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                        gameViewModel.quiteTheGame()
+                    }))
+                    : Alert(title: alertItem.title, message: alertItem.message, primaryButton: .default(alertItem.buttonText, action: {
+                        //reset the game
+                        gameViewModel.resetTheGame()
+                    }), secondaryButton: .destructive(Text("Quit"), action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                        gameViewModel.quiteTheGame()
+                    }))
+                }
             }
         }.onAppear {
             gameViewModel.getTheGame()

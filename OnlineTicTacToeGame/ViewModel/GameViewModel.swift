@@ -13,9 +13,15 @@ final class GameViewModel: ObservableObject {
     
     let gridColumns: [GridItem] = [GridItem(.flexible(minimum: 10, maximum: 300)),GridItem(.flexible(minimum: 10, maximum: 300)),GridItem(.flexible(minimum: 10, maximum: 300))]
     
-    @Published var game: GameModel?
+    @Published var game: GameModel? {
+        didSet {
+            checkIfGameIsOver()
+        }
+    }
     //GameModel(id: UUID(), playerOneID: "player1", playerTwoID: "player2", blockMoveForPlayerID: "player1", winnerID: "", rematchPlayerID: [], moves: Array(repeating: nil, count: 9))
     @Published var currentUser: UserModel!
+    @Published var alertItem: AlertItem?
+    
     private var cancellable: Set<AnyCancellable> = []
     
     private let winPattern: Set<Set<Int>> = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
@@ -33,12 +39,12 @@ final class GameViewModel: ObservableObject {
         
         if isSquareOccupied(in: game.moves, forIndex: position) { return }
         
-        game.moves[position] = MoveModel(isPlayerOne: true, boardIndex: position)
+        game.moves[position] = MoveModel(isPlayerOne: isPlayerOne(), boardIndex: position)
         game.blockMoveForPlayerID = currentUser.id
         
         FirebaseService.shared.updateOnlineGame(game)
         
-        if checkForWinCondition(for: true, in: game.moves) {
+        if checkForWinCondition(for: isPlayerOne(), in: game.moves) {
             game.winnerID = currentUser.id
             FirebaseService.shared.updateOnlineGame(game)
             print("winnerrrrr")
@@ -53,8 +59,35 @@ final class GameViewModel: ObservableObject {
         }
     }
     
+    func resetTheGame() {
+        
+    }
+    
+    func checkIfGameIsOver() {
+        alertItem = nil
+        
+        guard let game = game else { return }
+        
+        if game.winnerID == "0" {
+            // draw
+            alertItem = AlertContext.draw
+        }else if game.winnerID != "" {
+            if game.winnerID == currentUser.id {
+                // we win
+                alertItem = AlertContext.youWin
+            } else {
+                // we lost
+                alertItem = AlertContext.youLost
+            }
+        }
+    }
+    
     func checkForGameBoardStatus() -> Bool {
         return game != nil ? game!.blockMoveForPlayerID == currentUser.id : false
+    }
+    
+    func isPlayerOne() -> Bool {
+        return game != nil ? game!.playerOneID == currentUser.id : false
     }
     
     func isSquareOccupied(in moves: [MoveModel?], forIndex index: Int) -> Bool {

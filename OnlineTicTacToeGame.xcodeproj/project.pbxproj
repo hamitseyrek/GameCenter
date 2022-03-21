@@ -20,6 +20,7 @@
 		5EBB04AC27E5D8E50056CD58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EBB04AB27E5D8E50056CD58 /* GoogleService-Info.plist */; };
 		5EBB04AF27E5E8830056CD58 /* FirebaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB04AE27E5E8830056CD58 /* FirebaseReference.swift */; };
 		5EBB04B127E5EA070056CD58 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB04B027E5EA070056CD58 /* FirebaseService.swift */; };
+		5EBB04B327E7A9160056CD58 /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB04B227E7A9160056CD58 /* AlertItem.swift */; };
 		5ED4CCBF27DFDBC600591932 /* OnlineTicTacToeGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4CCBE27DFDBC600591932 /* OnlineTicTacToeGameApp.swift */; };
 		5ED4CCC127DFDBC600591932 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4CCC027DFDBC600591932 /* HomeView.swift */; };
 		5ED4CCC327DFDBC800591932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ED4CCC227DFDBC800591932 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 		5EBB04AB27E5D8E50056CD58 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5EBB04AE27E5E8830056CD58 /* FirebaseReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseReference.swift; sourceTree = "<group>"; };
 		5EBB04B027E5EA070056CD58 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		5EBB04B227E7A9160056CD58 /* AlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
 		5ED4CCBB27DFDBC600591932 /* OnlineTicTacToeGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineTicTacToeGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED4CCBE27DFDBC600591932 /* OnlineTicTacToeGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineTicTacToeGameApp.swift; sourceTree = "<group>"; };
 		5ED4CCC027DFDBC600591932 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			children = (
 				5EBB04AE27E5E8830056CD58 /* FirebaseReference.swift */,
 				5EBB04B027E5EA070056CD58 /* FirebaseService.swift */,
+				5EBB04B227E7A9160056CD58 /* AlertItem.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				5ED4CCD127E0E89700591932 /* HomeViewModel.swift in Sources */,
 				5ED4CCBF27DFDBC600591932 /* OnlineTicTacToeGameApp.swift in Sources */,
 				5EBB04A327E504610056CD58 /* UserModel.swift in Sources */,
+				5EBB04B327E7A9160056CD58 /* AlertItem.swift in Sources */,
 				5EBB04A127E3B3730056CD58 /* GameModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
