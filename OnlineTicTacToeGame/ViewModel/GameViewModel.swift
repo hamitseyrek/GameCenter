@@ -60,7 +60,22 @@ final class GameViewModel: ObservableObject {
     }
     
     func resetTheGame() {
+        guard var game = game else {
+            alertItem = AlertContext.quit
+            return
+        }
         
+        if game.rematchPlayerID.count == 1 {
+            // start new game
+            game.moves = Array(repeating: nil, count: 9)
+            game.winnerID = ""
+            game.blockMoveForPlayerID = game.playerOneID
+        } else if game.rematchPlayerID.count == 2 {
+            game.rematchPlayerID = []
+        }
+        
+        game.rematchPlayerID.append(currentUser.id)
+        FirebaseService.shared.updateOnlineGame(game)
     }
     
     func checkIfGameIsOver() {
