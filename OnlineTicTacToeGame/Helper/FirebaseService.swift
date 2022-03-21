@@ -72,7 +72,7 @@ final class FirebaseService:ObservableObject {
     
     func createNewGame(with userID: String) {
         // create new game object
-        print("creating gar for userid:", userID)
+        print("creating game for userid:", userID)
         
         self.game = GameModel(id: UUID(), playerOneID: userID, playerTwoID: "", blockMoveForPlayerID: userID, winnerID: "", rematchPlayerID: [], moves: Array(repeating: nil, count: 9))
         self.createOnlineGame()

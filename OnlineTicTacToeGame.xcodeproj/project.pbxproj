@@ -21,6 +21,7 @@
 		5EBB04AF27E5E8830056CD58 /* FirebaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB04AE27E5E8830056CD58 /* FirebaseReference.swift */; };
 		5EBB04B127E5EA070056CD58 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB04B027E5EA070056CD58 /* FirebaseService.swift */; };
 		5EBB04B327E7A9160056CD58 /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB04B227E7A9160056CD58 /* AlertItem.swift */; };
+		5EBB04B527E8F2480056CD58 /* GameNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB04B427E8F2480056CD58 /* GameNotification.swift */; };
 		5ED4CCBF27DFDBC600591932 /* OnlineTicTacToeGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4CCBE27DFDBC600591932 /* OnlineTicTacToeGameApp.swift */; };
 		5ED4CCC127DFDBC600591932 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4CCC027DFDBC600591932 /* HomeView.swift */; };
 		5ED4CCC327DFDBC800591932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ED4CCC227DFDBC800591932 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		5EBB04AE27E5E8830056CD58 /* FirebaseReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseReference.swift; sourceTree = "<group>"; };
 		5EBB04B027E5EA070056CD58 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		5EBB04B227E7A9160056CD58 /* AlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
+		5EBB04B427E8F2480056CD58 /* GameNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNotification.swift; sourceTree = "<group>"; };
 		5ED4CCBB27DFDBC600591932 /* OnlineTicTacToeGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineTicTacToeGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED4CCBE27DFDBC600591932 /* OnlineTicTacToeGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineTicTacToeGameApp.swift; sourceTree = "<group>"; };
 		5ED4CCC027DFDBC600591932 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				5EBB04AE27E5E8830056CD58 /* FirebaseReference.swift */,
 				5EBB04B027E5EA070056CD58 /* FirebaseService.swift */,
 				5EBB04B227E7A9160056CD58 /* AlertItem.swift */,
+				5EBB04B427E8F2480056CD58 /* GameNotification.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				5EBB04AF27E5E8830056CD58 /* FirebaseReference.swift in Sources */,
 				5ED4CCCF27E0E68A00591932 /* GameButtonView.swift in Sources */,
 				5EBB049827E2427E0056CD58 /* PlayerIndicatorView.swift in Sources */,
+				5EBB04B527E8F2480056CD58 /* GameNotification.swift in Sources */,
 				5EBB04B127E5EA070056CD58 /* FirebaseService.swift in Sources */,
 				5ED4CCC127DFDBC600591932 /* HomeView.swift in Sources */,
 				5ED4CCCD27E0E4DC00591932 /* GameView.swift in Sources */,

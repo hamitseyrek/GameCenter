@@ -16,11 +16,17 @@ final class GameViewModel: ObservableObject {
     @Published var game: GameModel? {
         didSet {
             checkIfGameIsOver()
+            //check the game status
+            if game == nil { updateGameNotificationFor(.finished) } else {
+                game?.playerTwoID == "" ? updateGameNotificationFor(.waitingForPlayer) :
+                updateGameNotificationFor(.started)
+            }
         }
     }
     //GameModel(id: UUID(), playerOneID: "player1", playerTwoID: "player2", blockMoveForPlayerID: "player1", winnerID: "", rematchPlayerID: [], moves: Array(repeating: nil, count: 9))
     @Published var currentUser: UserModel!
     @Published var alertItem: AlertItem?
+    @Published var gameNotification = GameNotification.watingForPlayer
     
     private var cancellable: Set<AnyCancellable> = []
     
@@ -76,6 +82,17 @@ final class GameViewModel: ObservableObject {
         
         game.rematchPlayerID.append(currentUser.id)
         FirebaseService.shared.updateOnlineGame(game)
+    }
+    
+    func updateGameNotificationFor(_ state: GameState) {
+        switch state {
+        case .started:
+            gameNotification = GameNotification.gameHasStarted
+        case .waitingForPlayer:
+            gameNotification = GameNotification.watingForPlayer
+        case .finished:
+            gameNotification = GameNotification.gameFinished
+        }
     }
     
     func checkIfGameIsOver() {

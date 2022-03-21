@@ -16,7 +16,7 @@ struct GameView: View {
         GeometryReader { geometry in
             VStack {
                 if gameViewModel.game?.playerTwoID == "" {
-                    Text("Waiting for the player")
+                    Text(gameViewModel.gameNotification)
                 }
                 
                 Button {
