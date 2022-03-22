@@ -17,7 +17,10 @@ struct OnlineTicTacToeGameApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            NavigationView {
+                LoginView()
+            }
+            //HomeView()
         }
     }
 }

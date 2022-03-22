@@ -22,6 +22,11 @@
 		5EBB04B127E5EA070056CD58 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB04B027E5EA070056CD58 /* FirebaseService.swift */; };
 		5EBB04B327E7A9160056CD58 /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB04B227E7A9160056CD58 /* AlertItem.swift */; };
 		5EBB04B527E8F2480056CD58 /* GameNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB04B427E8F2480056CD58 /* GameNotification.swift */; };
+		5EC1FF2C27EA4509007C101B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1FF2B27EA4509007C101B /* LoginView.swift */; };
+		5EC1FF2E27EA46CB007C101B /* InputTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1FF2D27EA46CB007C101B /* InputTextFieldView.swift */; };
+		5EC1FF3327EA4DE1007C101B /* PreviewLayoutComponentModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1FF3227EA4DE1007C101B /* PreviewLayoutComponentModifier.swift */; };
+		5EC1FF3527EA4FFD007C101B /* InputPasswordFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1FF3427EA4FFD007C101B /* InputPasswordFieldView.swift */; };
+		5EC1FF3727EA5181007C101B /* ButtonComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1FF3627EA5181007C101B /* ButtonComponentView.swift */; };
 		5ED4CCBF27DFDBC600591932 /* OnlineTicTacToeGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4CCBE27DFDBC600591932 /* OnlineTicTacToeGameApp.swift */; };
 		5ED4CCC127DFDBC600591932 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4CCC027DFDBC600591932 /* HomeView.swift */; };
 		5ED4CCC327DFDBC800591932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ED4CCC227DFDBC800591932 /* Assets.xcassets */; };
@@ -44,6 +49,11 @@
 		5EBB04B027E5EA070056CD58 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		5EBB04B227E7A9160056CD58 /* AlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
 		5EBB04B427E8F2480056CD58 /* GameNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNotification.swift; sourceTree = "<group>"; };
+		5EC1FF2B27EA4509007C101B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		5EC1FF2D27EA46CB007C101B /* InputTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextFieldView.swift; sourceTree = "<group>"; };
+		5EC1FF3227EA4DE1007C101B /* PreviewLayoutComponentModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewLayoutComponentModifier.swift; sourceTree = "<group>"; };
+		5EC1FF3427EA4FFD007C101B /* InputPasswordFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasswordFieldView.swift; sourceTree = "<group>"; };
+		5EC1FF3627EA5181007C101B /* ButtonComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponentView.swift; sourceTree = "<group>"; };
 		5ED4CCBB27DFDBC600591932 /* OnlineTicTacToeGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineTicTacToeGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED4CCBE27DFDBC600591932 /* OnlineTicTacToeGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineTicTacToeGameApp.swift; sourceTree = "<group>"; };
 		5ED4CCC027DFDBC600591932 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -68,22 +78,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5EBB049227E23D050056CD58 /* Component */ = {
-			isa = PBXGroup;
-			children = (
-				5ED4CCCE27E0E68A00591932 /* GameButtonView.swift */,
-				5EBB049527E2426B0056CD58 /* GameSquareView.swift */,
-				5EBB049727E2427E0056CD58 /* PlayerIndicatorView.swift */,
-				5EBB049927E3A7690056CD58 /* LoadingView.swift */,
-			);
-			path = Component;
-			sourceTree = "<group>";
-		};
 		5EBB049327E23D1C0056CD58 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				5ED4CCCC27E0E4DC00591932 /* GameView.swift */,
 				5ED4CCC027DFDBC600591932 /* HomeView.swift */,
+				5EC1FF2B27EA4509007C101B /* LoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -118,6 +118,37 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		5EC1FF2F27EA4D90007C101B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5EC1FF3127EA4DA5007C101B /* Views */,
+				5EC1FF3027EA4D98007C101B /* Modifier */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		5EC1FF3027EA4D98007C101B /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				5EC1FF3227EA4DE1007C101B /* PreviewLayoutComponentModifier.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
+		5EC1FF3127EA4DA5007C101B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5ED4CCCE27E0E68A00591932 /* GameButtonView.swift */,
+				5EBB049527E2426B0056CD58 /* GameSquareView.swift */,
+				5EC1FF2D27EA46CB007C101B /* InputTextFieldView.swift */,
+				5EC1FF3427EA4FFD007C101B /* InputPasswordFieldView.swift */,
+				5EBB049727E2427E0056CD58 /* PlayerIndicatorView.swift */,
+				5EC1FF3627EA5181007C101B /* ButtonComponentView.swift */,
+				5EBB049927E3A7690056CD58 /* LoadingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		5ED4CCB227DFDBC600591932 = {
 			isa = PBXGroup;
 			children = (
@@ -137,10 +168,10 @@
 		5ED4CCBD27DFDBC600591932 /* OnlineTicTacToeGame */ = {
 			isa = PBXGroup;
 			children = (
+				5EC1FF2F27EA4D90007C101B /* Base */,
 				5EBB04AD27E5E8730056CD58 /* Helper */,
 				5EBB049D27E3B1630056CD58 /* Model */,
 				5EBB049327E23D1C0056CD58 /* View */,
-				5EBB049227E23D050056CD58 /* Component */,
 				5EBB049427E23D400056CD58 /* ViewModel */,
 				5ED4CCBE27DFDBC600591932 /* OnlineTicTacToeGameApp.swift */,
 				5EBB04AB27E5D8E50056CD58 /* GoogleService-Info.plist */,
@@ -247,12 +278,17 @@
 				5ED4CCCD27E0E4DC00591932 /* GameView.swift in Sources */,
 				5EBB049627E2426B0056CD58 /* GameSquareView.swift in Sources */,
 				5EBB049F27E3B1920056CD58 /* MoveModel.swift in Sources */,
+				5EC1FF2C27EA4509007C101B /* LoginView.swift in Sources */,
 				5EBB049A27E3A7690056CD58 /* LoadingView.swift in Sources */,
 				5ED4CCD127E0E89700591932 /* HomeViewModel.swift in Sources */,
 				5ED4CCBF27DFDBC600591932 /* OnlineTicTacToeGameApp.swift in Sources */,
 				5EBB04A327E504610056CD58 /* UserModel.swift in Sources */,
 				5EBB04B327E7A9160056CD58 /* AlertItem.swift in Sources */,
 				5EBB04A127E3B3730056CD58 /* GameModel.swift in Sources */,
+				5EC1FF3527EA4FFD007C101B /* InputPasswordFieldView.swift in Sources */,
+				5EC1FF3327EA4DE1007C101B /* PreviewLayoutComponentModifier.swift in Sources */,
+				5EC1FF3727EA5181007C101B /* ButtonComponentView.swift in Sources */,
+				5EC1FF2E27EA46CB007C101B /* InputTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
