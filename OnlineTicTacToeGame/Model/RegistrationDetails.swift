@@ -7,10 +7,23 @@
 
 import Foundation
 
-struct RegistrationDetails {
+struct RegistrationDetails: Codable {
+    
     var email: String
     var password: String
     var firstName: String
     var lastName: String
     var occupation: String
+}
+
+extension RegistrationDetails {
+    
+    static var new: RegistrationDetails {
+        
+        RegistrationDetails (email: "",
+                             password: "",
+                             firstName: "",
+                             lastName: "",
+                             occupation: "")
+    }
 }

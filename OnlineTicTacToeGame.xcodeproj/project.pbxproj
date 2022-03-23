@@ -32,6 +32,9 @@
 		5EC1FF3D27EB9553007C101B /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1FF3C27EB9553007C101B /* ForgotPasswordView.swift */; };
 		5EC1FF3F27EB9B64007C101B /* RegistrationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1FF3E27EB9B64007C101B /* RegistrationDetails.swift */; };
 		5EC1FF4227EB9BD2007C101B /* RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1FF4127EB9BD2007C101B /* RegistrationService.swift */; };
+		5EC1FF4427EBBE21007C101B /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1FF4327EBBE21007C101B /* RegistrationViewModel.swift */; };
+		5EC1FF4827EBC28E007C101B /* SessionUserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1FF4727EBC28E007C101B /* SessionUserDetails.swift */; };
+		5EC1FF4B27EBC2F9007C101B /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1FF4A27EBC2F9007C101B /* SessionService.swift */; };
 		5ED4CCBF27DFDBC600591932 /* OnlineTicTacToeGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4CCBE27DFDBC600591932 /* OnlineTicTacToeGameApp.swift */; };
 		5ED4CCC127DFDBC600591932 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4CCC027DFDBC600591932 /* HomeView.swift */; };
 		5ED4CCC327DFDBC800591932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ED4CCC227DFDBC800591932 /* Assets.xcassets */; };
@@ -64,6 +67,9 @@
 		5EC1FF3C27EB9553007C101B /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		5EC1FF3E27EB9B64007C101B /* RegistrationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDetails.swift; sourceTree = "<group>"; };
 		5EC1FF4127EB9BD2007C101B /* RegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationService.swift; sourceTree = "<group>"; };
+		5EC1FF4327EBBE21007C101B /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		5EC1FF4727EBC28E007C101B /* SessionUserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionUserDetails.swift; sourceTree = "<group>"; };
+		5EC1FF4A27EBC2F9007C101B /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 		5ED4CCBB27DFDBC600591932 /* OnlineTicTacToeGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineTicTacToeGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED4CCBE27DFDBC600591932 /* OnlineTicTacToeGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineTicTacToeGameApp.swift; sourceTree = "<group>"; };
 		5ED4CCC027DFDBC600591932 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -105,6 +111,7 @@
 			children = (
 				5ED4CCD027E0E89700591932 /* HomeViewModel.swift */,
 				5EBB049B27E3AB2F0056CD58 /* GameViewModel.swift */,
+				5EC1FF4327EBBE21007C101B /* RegistrationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -134,6 +141,7 @@
 		5EC1FF2F27EA4D90007C101B /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				5EC1FF4527EBC26E007C101B /* Session */,
 				5EC1FF3127EA4DA5007C101B /* Views */,
 				5EC1FF3027EA4D98007C101B /* Modifier */,
 			);
@@ -167,6 +175,31 @@
 			isa = PBXGroup;
 			children = (
 				5EC1FF4127EB9BD2007C101B /* RegistrationService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		5EC1FF4527EBC26E007C101B /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				5EC1FF4927EBC2E6007C101B /* Service */,
+				5EC1FF4627EBC27B007C101B /* Model */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		5EC1FF4627EBC27B007C101B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5EC1FF4727EBC28E007C101B /* SessionUserDetails.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5EC1FF4927EBC2E6007C101B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5EC1FF4A27EBC2F9007C101B /* SessionService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -301,11 +334,14 @@
 				5ED4CCC127DFDBC600591932 /* HomeView.swift in Sources */,
 				5ED4CCCD27E0E4DC00591932 /* GameView.swift in Sources */,
 				5EBB049627E2426B0056CD58 /* GameSquareView.swift in Sources */,
+				5EC1FF4427EBBE21007C101B /* RegistrationViewModel.swift in Sources */,
 				5EC1FF3D27EB9553007C101B /* ForgotPasswordView.swift in Sources */,
+				5EC1FF4827EBC28E007C101B /* SessionUserDetails.swift in Sources */,
 				5EC1FF3F27EB9B64007C101B /* RegistrationDetails.swift in Sources */,
 				5EBB049F27E3B1920056CD58 /* MoveModel.swift in Sources */,
 				5EC1FF2C27EA4509007C101B /* LoginView.swift in Sources */,
 				5EC1FF4227EB9BD2007C101B /* RegistrationService.swift in Sources */,
+				5EC1FF4B27EBC2F9007C101B /* SessionService.swift in Sources */,
 				5EC1FF3927EB8E84007C101B /* RegisterView.swift in Sources */,
 				5EBB049A27E3A7690056CD58 /* LoadingView.swift in Sources */,
 				5ED4CCD127E0E89700591932 /* HomeViewModel.swift in Sources */,

@@ -9,6 +9,10 @@ import SwiftUI
 
 struct RegisterView: View {
     
+    @StateObject private var registerViewModel = RegistrationViewModelImpl(
+        service: RegistrationServiceImp()
+    )
+    
     var body: some View {
         
         NavigationView {
@@ -17,19 +21,20 @@ struct RegisterView: View {
                 
                 VStack(spacing: 16) {
                     
-                    InputTextFieldView(text: .constant(""), placeholder: "Email", keyboardType: .emailAddress, sfSymbols: "envelope")
-                    InputPasswordFieldView(password: .constant(""), placeholder: "Password", sfSymbols: "lock")
+                    InputTextFieldView(text: $registerViewModel.userDetails.email, placeholder: "Email", keyboardType: .emailAddress, sfSymbols: "envelope")
+                    
+                    InputPasswordFieldView(password: $registerViewModel.userDetails.password, placeholder: "Password", sfSymbols: "lock")
                     
                     Divider()
                     
-                    InputTextFieldView(text: .constant(""), placeholder: "First Name", keyboardType: .namePhonePad, sfSymbols: nil)
+                    InputTextFieldView(text: $registerViewModel.userDetails.firstName, placeholder: "First Name", keyboardType: .namePhonePad, sfSymbols: nil)
                     
-                    InputTextFieldView(text: .constant(""), placeholder: "Last Name", keyboardType: .namePhonePad, sfSymbols: nil)
+                    InputTextFieldView(text: $registerViewModel.userDetails.lastName, placeholder: "Last Name", keyboardType: .namePhonePad, sfSymbols: nil)
                     
-                    InputTextFieldView(text: .constant(""), placeholder: "Occupation", keyboardType: .namePhonePad, sfSymbols: nil)
+                    InputTextFieldView(text: $registerViewModel.userDetails.occupation, placeholder: "Occupation", keyboardType: .namePhonePad, sfSymbols: nil)
                 }
                 ButtonComponentView(title: "Sign Up") {
-                    
+                    registerViewModel.register()
                 }
             }
             .padding(.horizontal, 15)
