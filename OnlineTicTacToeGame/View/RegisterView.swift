@@ -9,26 +9,32 @@ import SwiftUI
 
 struct RegisterView: View {
     
-    @Environment(\.presentationMode) var presentationMode
-    
     var body: some View {
         
         NavigationView {
             
             VStack(spacing: 32) {
                 
-                
+                VStack(spacing: 16) {
+                    
+                    InputTextFieldView(text: .constant(""), placeholder: "Email", keyboardType: .emailAddress, sfSymbols: "envelope")
+                    InputPasswordFieldView(password: .constant(""), placeholder: "Password", sfSymbols: "lock")
+                    
+                    Divider()
+                    
+                    InputTextFieldView(text: .constant(""), placeholder: "First Name", keyboardType: .namePhonePad, sfSymbols: nil)
+                    
+                    InputTextFieldView(text: .constant(""), placeholder: "Last Name", keyboardType: .namePhonePad, sfSymbols: nil)
+                    
+                    InputTextFieldView(text: .constant(""), placeholder: "Occupation", keyboardType: .namePhonePad, sfSymbols: nil)
+                }
+                ButtonComponentView(title: "Sign Up") {
+                    
+                }
             }
             .padding(.horizontal, 15)
             .navigationTitle("Register")
-            .toolbar {
-                Button {
-                    presentationMode.wrappedValue.dismiss()
-                } label: {
-                    Image(systemName: "xmark")
-                }
-
-            }
+            .applyClose()
         }
     }
 }
