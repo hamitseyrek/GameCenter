@@ -27,6 +27,7 @@
 		5EC1FF3327EA4DE1007C101B /* PreviewLayoutComponentModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1FF3227EA4DE1007C101B /* PreviewLayoutComponentModifier.swift */; };
 		5EC1FF3527EA4FFD007C101B /* InputPasswordFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1FF3427EA4FFD007C101B /* InputPasswordFieldView.swift */; };
 		5EC1FF3727EA5181007C101B /* ButtonComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1FF3627EA5181007C101B /* ButtonComponentView.swift */; };
+		5EC1FF3927EB8E84007C101B /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1FF3827EB8E84007C101B /* RegisterView.swift */; };
 		5ED4CCBF27DFDBC600591932 /* OnlineTicTacToeGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4CCBE27DFDBC600591932 /* OnlineTicTacToeGameApp.swift */; };
 		5ED4CCC127DFDBC600591932 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4CCC027DFDBC600591932 /* HomeView.swift */; };
 		5ED4CCC327DFDBC800591932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ED4CCC227DFDBC800591932 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		5EC1FF3227EA4DE1007C101B /* PreviewLayoutComponentModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewLayoutComponentModifier.swift; sourceTree = "<group>"; };
 		5EC1FF3427EA4FFD007C101B /* InputPasswordFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasswordFieldView.swift; sourceTree = "<group>"; };
 		5EC1FF3627EA5181007C101B /* ButtonComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponentView.swift; sourceTree = "<group>"; };
+		5EC1FF3827EB8E84007C101B /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		5ED4CCBB27DFDBC600591932 /* OnlineTicTacToeGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineTicTacToeGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED4CCBE27DFDBC600591932 /* OnlineTicTacToeGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineTicTacToeGameApp.swift; sourceTree = "<group>"; };
 		5ED4CCC027DFDBC600591932 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				5ED4CCCC27E0E4DC00591932 /* GameView.swift */,
 				5ED4CCC027DFDBC600591932 /* HomeView.swift */,
 				5EC1FF2B27EA4509007C101B /* LoginView.swift */,
+				5EC1FF3827EB8E84007C101B /* RegisterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				5EBB049627E2426B0056CD58 /* GameSquareView.swift in Sources */,
 				5EBB049F27E3B1920056CD58 /* MoveModel.swift in Sources */,
 				5EC1FF2C27EA4509007C101B /* LoginView.swift in Sources */,
+				5EC1FF3927EB8E84007C101B /* RegisterView.swift in Sources */,
 				5EBB049A27E3A7690056CD58 /* LoadingView.swift in Sources */,
 				5ED4CCD127E0E89700591932 /* HomeViewModel.swift in Sources */,
 				5ED4CCBF27DFDBC600591932 /* OnlineTicTacToeGameApp.swift in Sources */,

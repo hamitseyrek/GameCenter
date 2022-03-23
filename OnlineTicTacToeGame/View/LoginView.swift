@@ -8,13 +8,49 @@
 import SwiftUI
 
 struct LoginView: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack(spacing: 16) {
+            
+            VStack(spacing: 16) {
+                
+                InputTextFieldView(text: .constant(""), placeholder: "Email", keyboardType: .emailAddress, sfSymbols: "envelope")
+                InputPasswordFieldView(password: .constant(""), placeholder: "Password", sfSymbols: "lock")
+            }
+            HStack {
+                
+                Spacer()
+                Button {
+                    
+                } label: {
+                    Text("Forgot Password?")
+                }
+                .font(.system(size: 16, weight: .bold))
+            }
+            
+            VStack(spacing: 16) {
+                
+                ButtonComponentView(title: "Login") {
+                    
+                }
+                ButtonComponentView(title: "Register",
+                                    background: .clear,
+                                    foreground: .blue,
+                                    border: .blue) {
+                    
+                }
+            }
+        }
+        .padding(.horizontal, 15)
+        .navigationTitle("Login")
     }
 }
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        NavigationView {
+            LoginView()
+        }
     }
 }
