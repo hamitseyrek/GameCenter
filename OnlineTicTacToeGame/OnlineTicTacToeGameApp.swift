@@ -11,6 +11,8 @@ import Firebase
 @main
 struct OnlineTicTacToeGameApp: App {
     
+    @StateObject var sessionService = SessionServiceImpl()
+    
     init() {
         FirebaseApp.configure()
     }
@@ -18,9 +20,13 @@ struct OnlineTicTacToeGameApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                LoginView()
+                switch sessionService.state {
+                case .loggedIn:
+                    HomeView().environmentObject(sessionService)
+                case .loggedOut:
+                    LoginView()
+                }
             }
-            //HomeView()
         }
     }
 }

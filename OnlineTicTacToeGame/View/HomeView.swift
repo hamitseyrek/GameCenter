@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject var homeViewModel = HomeViewModel()
+    @EnvironmentObject var sessionService: SessionServiceImpl
     
     var body: some View {
         
@@ -17,9 +18,9 @@ struct HomeView: View {
             
             VStack(alignment: .leading, spacing: 16) {
                 
-                Text("Name: ")
-                Text("Surname: ")
-                Text("Occupation: ")
+                Text("Name: \(sessionService.userDetails?.firstName ?? "N/A")")
+                Text("Surname:  \(sessionService.userDetails?.lastName ?? "N/A")")
+                Text("Occupation:  \(sessionService.userDetails?.occupation ?? "N/A")")
             }
             
             ButtonComponentView(title: "Play",
@@ -30,7 +31,7 @@ struct HomeView: View {
             }
             
             ButtonComponentView(title: "Logout") {
-                
+                sessionService.logout()
             }
         }
         .fullScreenCover(isPresented: $homeViewModel.isGameviewPresented, content: {
@@ -45,6 +46,7 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             HomeView()
+                .environmentObject(SessionServiceImpl() )
         }
     }
 }

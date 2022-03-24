@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SessionUserDetails {
+struct SessionUserDetails: Codable {
     
     let firstName: String
     let lastName: String
