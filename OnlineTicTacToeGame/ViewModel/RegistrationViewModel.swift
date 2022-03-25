@@ -35,7 +35,6 @@ final class RegistrationViewModelImpl: ObservableObject, RegistrationViewModel {
     }
     
     func register() {
-        
         service
             .register(with: userDetails)
             .sink { [weak self] res in

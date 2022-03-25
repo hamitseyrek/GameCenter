@@ -27,11 +27,11 @@ struct RegisterView: View {
                     
                     Divider()
                     
-                    InputTextFieldView(text: $registerViewModel.userDetails.firstName, placeholder: "First Name", keyboardType: .namePhonePad, sfSymbols: nil)
+                    InputTextFieldView(text: $registerViewModel.userDetails.firstName, placeholder: "First Name", keyboardType: .default, sfSymbols: nil)
                     
-                    InputTextFieldView(text: $registerViewModel.userDetails.lastName, placeholder: "Last Name", keyboardType: .namePhonePad, sfSymbols: nil)
+                    InputTextFieldView(text: $registerViewModel.userDetails.lastName, placeholder: "Last Name", keyboardType: .default, sfSymbols: nil)
                     
-                    InputTextFieldView(text: $registerViewModel.userDetails.occupation, placeholder: "Occupation", keyboardType: .namePhonePad, sfSymbols: nil)
+                    InputTextFieldView(text: $registerViewModel.userDetails.occupation, placeholder: "Occupation", keyboardType: .default, sfSymbols: nil)
                 }
                 ButtonComponentView(title: "Sign Up") {
                     registerViewModel.register()

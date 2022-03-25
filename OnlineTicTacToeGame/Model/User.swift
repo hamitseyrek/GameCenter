@@ -22,9 +22,9 @@ extension User {
     static var new: User {
         
         User (email: "",
-                             password: "",
-                             firstName: "",
-                             lastName: "",
-                             occupation: "")
+              password: "",
+              firstName: "",
+              lastName: "",
+              occupation: "")
     }
 }

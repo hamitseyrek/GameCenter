@@ -27,6 +27,8 @@ struct OnlineTicTacToeGameApp: App {
                     LoginView()
                 }
             }
+            // this fixed navigationTitle constraints error in terminal
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }
