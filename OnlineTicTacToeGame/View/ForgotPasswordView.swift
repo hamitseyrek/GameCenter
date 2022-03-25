@@ -20,7 +20,7 @@ struct ForgotPasswordView: View {
                 
                 VStack(spacing: 16) {
                     
-                    InputTextFieldView(text: viewModel.email, placeholder: "Email", keyboardType: .emailAddress, sfSymbols: "envelope")
+                    InputTextFieldView(text: .constant(viewModel.email), placeholder: "Email", keyboardType: .emailAddress, sfSymbols: "envelope")
                     
                     ButtonComponentView(title: "Send Password Reset") {
                         viewModel.sendPasswordReset()

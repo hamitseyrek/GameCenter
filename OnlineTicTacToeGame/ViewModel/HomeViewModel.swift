@@ -9,5 +9,4 @@ import SwiftUI
 
 final class HomeViewModel: ObservableObject {
     @Published var isGameviewPresented = false
-
 }

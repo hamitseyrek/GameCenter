@@ -16,16 +16,16 @@ enum LoginState {
 
 protocol LoginViewModel {
     func login()
-    
     var service: LoginService { get }
     var state: LoginState { get }
     var credential: User { get }
-    
+    var hasError: Bool { get }
     init(service: LoginService)
 }
 
 final class LoginViewModelImp: ObservableObject, LoginViewModel {
     
+    @Published var hasError: Bool = false
     @Published var state: LoginState = .na
     @Published var credential: User = User.new
     
@@ -35,6 +35,7 @@ final class LoginViewModelImp: ObservableObject, LoginViewModel {
     
     init(service: LoginService) {
         self.service = service
+        setupErrorSubscriptions()
     }
     
     func login() {
@@ -47,11 +48,29 @@ final class LoginViewModelImp: ObservableObject, LoginViewModel {
                     self.state = .failed(error: err)
                 default: break
                 }
-        
+                
             } receiveValue: { [weak self] in
                 self?.state = .successfull
             }
             .store(in: &subsciptions)
+    }
+}
 
+private extension LoginViewModelImp {
+    
+    func setupErrorSubscriptions () {
+        
+        $state
+        
+            .map { state -> Bool in
+                switch state {
+                case .successfull,
+                        .na:
+                    return false
+                case .failed:
+                    return true
+                }
+            }
+            .assign(to: &$hasError)
     }
 }

@@ -57,6 +57,19 @@ struct LoginView: View {
         }
         .padding(.horizontal, 15)
         .navigationTitle("Login")
+        .alert(isPresented: $viewModel.hasError,
+               content: {
+            
+            if case .failed(let error) = viewModel.state {
+                return Alert(
+                    title: Text("Error"),
+                    message: Text(error.localizedDescription))
+            } else {
+                return Alert(
+                    title: Text("Error"),
+                    message: Text("Something went wrong"))
+            }
+        })
     }
 }
 

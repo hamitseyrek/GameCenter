@@ -140,8 +140,6 @@
 		5EBB04AD27E5E8730056CD58 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				5EBB04AE27E5E8830056CD58 /* FirebaseReference.swift */,
-				5EBB04B027E5EA070056CD58 /* FirebaseService.swift */,
 				5EBB04B227E7A9160056CD58 /* AlertItem.swift */,
 				5EBB04B427E8F2480056CD58 /* GameNotification.swift */,
 			);
@@ -185,6 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				5EC1FF4127EB9BD2007C101B /* RegistrationService.swift */,
+				5EBB04AE27E5E8830056CD58 /* FirebaseReference.swift */,
+				5EBB04B027E5EA070056CD58 /* FirebaseService.swift */,
 				5EC1FF5027EE49F9007C101B /* ForgotPasswordService.swift */,
 				5EC1FF4E27EE146A007C101B /* LoginService.swift */,
 			);
