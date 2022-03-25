@@ -12,15 +12,17 @@ struct LoginView: View {
     @State private var showRegistration = false
     @State private var showForgotPassword = false
     
+    @StateObject var viewModel = LoginViewModelImp(service: LoginServiceImpl())
+    
     var body: some View {
         
         VStack(spacing: 16) {
             
             VStack(spacing: 16) {
                 
-                InputTextFieldView(text: .constant(""), placeholder: "Email", keyboardType: .emailAddress, sfSymbols: "envelope")
+                InputTextFieldView(text: $viewModel.credential.email, placeholder: "Email", keyboardType: .emailAddress, sfSymbols: "envelope")
                 
-                InputPasswordFieldView(password: .constant(""), placeholder: "Password", sfSymbols: "lock")
+                InputPasswordFieldView(password: $viewModel.credential.password , placeholder: "Password", sfSymbols: "lock")
             }
             HStack {
                 
@@ -40,7 +42,7 @@ struct LoginView: View {
             VStack(spacing: 16) {
                 
                 ButtonComponentView(title: "Login") {
-                    
+                    viewModel.login()
                 }
                 
                 ButtonComponentView(title: "Register",

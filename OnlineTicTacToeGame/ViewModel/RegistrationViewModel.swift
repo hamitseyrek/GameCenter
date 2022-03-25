@@ -31,7 +31,6 @@ final class RegistrationViewModelImpl: ObservableObject, RegistrationViewModel {
     private var subscriptions = Set<AnyCancellable>()
     
     init(service: RegistrationService) {
-        
         self.service = service
     }
     

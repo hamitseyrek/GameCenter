@@ -24,7 +24,7 @@ final class GameViewModel: ObservableObject {
         }
     }
     //GameModel(id: UUID(), playerOneID: "player1", playerTwoID: "player2", blockMoveForPlayerID: "player1", winnerID: "", rematchPlayerID: [], moves: Array(repeating: nil, count: 9))
-    @Published var currentUser: UserModel!
+    @Published var currentUser: User!
     @Published var alertItem: AlertItem?
     @Published var gameNotification = GameNotification.watingForPlayer
     
@@ -143,7 +143,7 @@ final class GameViewModel: ObservableObject {
     
     //MARK: - User Object
     func saveUser() {
-        currentUser = UserModel()
+        currentUser = User.new
         
         do {
             print("encoding user")
@@ -158,7 +158,7 @@ final class GameViewModel: ObservableObject {
         
         do {
             print("decoding user")
-            currentUser = try JSONDecoder().decode(UserModel.self, from: userData)
+            currentUser = try JSONDecoder().decode(User.self, from: userData)
         } catch {
             print("no user data")
         }
