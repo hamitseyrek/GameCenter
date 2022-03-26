@@ -24,7 +24,8 @@ final class GameViewModel: ObservableObject {
         }
     }
     //GameModel(id: UUID(), playerOneID: "player1", playerTwoID: "player2", blockMoveForPlayerID: "player1", winnerID: "", rematchPlayerID: [], moves: Array(repeating: nil, count: 9))
-    @Published var currentUser: SessionUserDetails!
+    @Published var currentUser: User!
+    @Published var userDetails: SessionUserDetails?
     @Published var alertItem: AlertItem?
     @Published var gameNotification = GameNotification.watingForPlayer
     
@@ -33,7 +34,11 @@ final class GameViewModel: ObservableObject {
     private let winPattern: Set<Set<Int>> = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
     
     init() {
-        currentUser = SessionServiceImpl.shared.userDetails
+        retriveUser()
+        
+        if currentUser == nil {
+            saveUser()
+        }
     }
     
     func processPlayerOne(for position: Int) {
@@ -137,10 +142,10 @@ final class GameViewModel: ObservableObject {
         return moves.compactMap { $0 }.count == 9
     }
     
-    
     //MARK: - User Object
     func saveUser() {
-        currentUser = SessionServiceImpl.shared.userDetails
+        currentUser = User.new
+        print("************   ", currentUser.id)
         
         do {
             print("encoding user")
@@ -151,19 +156,22 @@ final class GameViewModel: ObservableObject {
     }
     
     func retriveUser() {
-        print(123)
         guard let userData = userData else { return }
         
         do {
             print("decoding user")
             currentUser = try JSONDecoder().decode(User.self, from: userData)
+            print(currentUser.id)
         } catch {
             print("no user data")
         }
     }
     
     func getTheGame() {
-        TicTactoeServiceImp.shared.startGame(with: currentUser.id)
+        SessionServiceImpl.shared.$userDetails
+                .assign(to: \.userDetails, on: self)
+                .store(in: &cancellable)
+        TicTactoeServiceImp.shared.startGame(with: userDetails?.id)
         TicTactoeServiceImp.shared.$game
             .assign(to: \.game, on: self)
             .store(in: &cancellable)

@@ -29,6 +29,7 @@ final class SessionServiceImpl: ObservableObject, SessionService {
     @Published var state: SessionState = .loggedOut
     @Published var userDetails: SessionUserDetails?
     
+    
     private var handler: AuthStateDidChangeListenerHandle?
     
     init() {

@@ -32,6 +32,7 @@ protocol TicTactoeService {
 
 final class TicTactoeServiceImp: ObservableObject, TicTactoeService {
     
+    
     static let shared = TicTactoeServiceImp()
     @Published var game: GameModel!
     
