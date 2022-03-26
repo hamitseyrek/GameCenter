@@ -24,7 +24,7 @@ final class GameViewModel: ObservableObject {
         }
     }
     //GameModel(id: UUID(), playerOneID: "player1", playerTwoID: "player2", blockMoveForPlayerID: "player1", winnerID: "", rematchPlayerID: [], moves: Array(repeating: nil, count: 9))
-    @Published var currentUser: User!
+    @Published var currentUser: SessionUserDetails!
     @Published var alertItem: AlertItem?
     @Published var gameNotification = GameNotification.watingForPlayer
     
@@ -33,11 +33,7 @@ final class GameViewModel: ObservableObject {
     private let winPattern: Set<Set<Int>> = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
     
     init() {
-        retriveUser()
-        
-        if currentUser == nil {
-            saveUser()
-        }
+        currentUser = SessionServiceImpl.shared.userDetails
     }
     
     func processPlayerOne(for position: Int) {
@@ -48,18 +44,18 @@ final class GameViewModel: ObservableObject {
         game.moves[position] = MoveModel(isPlayerOne: isPlayerOne(), boardIndex: position)
         game.blockMoveForPlayerID = currentUser.id
         
-        FirebaseService.shared.updateOnlineGame(game)
+        TicTactoeServiceImp.shared.updateOnlineGame(game)
         
         if checkForWinCondition(for: isPlayerOne(), in: game.moves) {
             game.winnerID = currentUser.id
-            FirebaseService.shared.updateOnlineGame(game)
+            TicTactoeServiceImp.shared.updateOnlineGame(game)
             print("winnerrrrr")
             return
         }
         
         if checkForDraw(in: game.moves) {
             game.winnerID =  "0"
-            FirebaseService.shared.updateOnlineGame(game)
+            TicTactoeServiceImp.shared.updateOnlineGame(game)
             print("draww")
             return
         }
@@ -81,7 +77,7 @@ final class GameViewModel: ObservableObject {
         }
         
         game.rematchPlayerID.append(currentUser.id)
-        FirebaseService.shared.updateOnlineGame(game)
+        TicTactoeServiceImp.shared.updateOnlineGame(game)
     }
     
     func updateGameNotificationFor(_ state: GameState) {
@@ -141,9 +137,10 @@ final class GameViewModel: ObservableObject {
         return moves.compactMap { $0 }.count == 9
     }
     
+    
     //MARK: - User Object
     func saveUser() {
-        currentUser = User.new
+        currentUser = SessionServiceImpl.shared.userDetails
         
         do {
             print("encoding user")
@@ -154,6 +151,7 @@ final class GameViewModel: ObservableObject {
     }
     
     func retriveUser() {
+        print(123)
         guard let userData = userData else { return }
         
         do {
@@ -165,13 +163,13 @@ final class GameViewModel: ObservableObject {
     }
     
     func getTheGame() {
-        FirebaseService.shared.startGame(with: currentUser.id)
-        FirebaseService.shared.$game
+        TicTactoeServiceImp.shared.startGame(with: currentUser.id)
+        TicTactoeServiceImp.shared.$game
             .assign(to: \.game, on: self)
             .store(in: &cancellable)
     }
     
     func quiteTheGame() {
-        FirebaseService.shared.quiteTheGame()
+        TicTactoeServiceImp.shared.quiteTheGame()
     }
 }

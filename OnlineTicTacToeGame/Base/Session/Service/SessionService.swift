@@ -25,6 +25,7 @@ protocol SessionService {
 
 final class SessionServiceImpl: ObservableObject, SessionService {
     
+    static let shared = SessionServiceImpl()
     @Published var state: SessionState = .loggedOut
     @Published var userDetails: SessionUserDetails?
     
@@ -61,30 +62,13 @@ private extension SessionServiceImpl {
                 print("Error is here 33: ", error?.localizedDescription ?? "")
                 return
             }
-            
+            print(1)
             if let snapshot = documentSnapshot {
                     self?.userDetails = try? snapshot.data(as: SessionUserDetails.self)
             }
+            print(2)
             return
         })
-                                                           
-                                                           /*,
-        
-        Database
-            .database ()
-            .reference ()
-             .child("users")
-             .child(uid)
-             .observe(.value) { [weak self] snapshot in
-                 guard let self = self,
-                        let value = snapshot.value as? NSDictionary,
-                        let firstName = value [RegistrationKeys.firstName.rawValue] as? String,
-                        let lastName = value[RegistrationKeys.lastName.rawValue] as? String,
-                        let occupation = value[RegistrationKeys.occupation.rawValue] as? String else {
-                     return
-                 }
-             }
-                                                           */
     }
 }
 

@@ -11,6 +11,8 @@ import FirebaseFirestoreSwift
 import Firebase
 
 enum RegistrationKeys: String {
+    case id
+    case email
     case firstName
     case lastName
     case occupation
@@ -39,7 +41,10 @@ final class RegistrationServiceImp: RegistrationService {
                             let values = [
                                 RegistrationKeys.firstName.rawValue: details.firstName,
                                 RegistrationKeys.lastName.rawValue: details.lastName,
-                                RegistrationKeys.occupation.rawValue: details.occupation
+                                RegistrationKeys.occupation.rawValue: details.occupation,
+                                RegistrationKeys.email.rawValue: details.email,
+                                RegistrationKeys.id.rawValue: uid
+                                
                             ] as [String : String]
                             
                             do {

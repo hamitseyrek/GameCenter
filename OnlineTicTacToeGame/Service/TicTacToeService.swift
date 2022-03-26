@@ -1,17 +1,38 @@
 //
-//  FirebaseService.swift
+//  RegistrationService.swift
 //  OnlineTicTacToeGame
 //
-//  Created by Hamit Seyrek on 19.03.2022.
+//  Created by Hamit Seyrek on 23.03.2022.
 //
 
 import Foundation
-import Firebase
-import FirebaseFirestoreSwift
 import Combine
+import FirebaseFirestoreSwift
+import Firebase
 
-final class FirebaseService:ObservableObject {
-    static let shared = FirebaseService()
+enum TicTactoeKeys: String {
+    case id
+    case playerOneID
+    case playerTwoID
+    case blockMoveForPlayerID
+    case winnerID
+    case rematchPlayerID
+    case moves
+}
+
+protocol TicTactoeService {
+    //func register(with details: RegistrationDetails) -> AnyPublisher<Void, Error>
+    func createOnlineGame()
+    func updateOnlineGame(_ game: GameModel)
+    func startGame(with userID: String)
+    func listenForGameChanges()
+    func createNewGame(with userID: String)
+    func quiteTheGame()
+}
+
+final class TicTactoeServiceImp: ObservableObject, TicTactoeService {
+    
+    static let shared = TicTactoeServiceImp()
     @Published var game: GameModel!
     
     init() { }
@@ -84,3 +105,4 @@ final class FirebaseService:ObservableObject {
         FirebaseReference(.Game).document(self.game.id.uuidString).delete()
     }
 }
+

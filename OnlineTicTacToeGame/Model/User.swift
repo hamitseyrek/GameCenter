@@ -9,7 +9,7 @@ import Foundation
 
 struct User: Codable {
     
-    var id = UUID().uuidString
+    var id: String
     var email: String
     var password: String
     var firstName: String
@@ -21,7 +21,8 @@ extension User {
     
     static var new: User {
         
-        User (email: "",
+        User (id: "",
+              email: "",
               password: "",
               firstName: "",
               lastName: "",

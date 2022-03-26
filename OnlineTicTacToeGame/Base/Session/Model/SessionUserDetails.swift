@@ -9,6 +9,8 @@ import Foundation
 
 struct SessionUserDetails: Codable {
     
+    var id: String
+    var email: String
     let firstName: String
     let lastName: String
     let occupation: String
