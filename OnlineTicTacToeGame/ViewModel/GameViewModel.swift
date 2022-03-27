@@ -9,11 +9,7 @@ import SwiftUI
 import Combine
 
 final class GameViewModel: ObservableObject {
-    var userIDD: String = ""
-    
     @AppStorage("user") private var userData: Data?
-    
-    @StateObject var sessionService = SessionServiceImpl()
     
     let gridColumns: [GridItem] = [GridItem(.flexible(minimum: 10, maximum: 300)),GridItem(.flexible(minimum: 10, maximum: 300)),GridItem(.flexible(minimum: 10, maximum: 300))]
     
@@ -27,9 +23,8 @@ final class GameViewModel: ObservableObject {
             }
         }
     }
-    //GameModel(id: UUID(), playerOneID: "player1", playerTwoID: "player2", blockMoveForPlayerID: "player1", winnerID: "", rematchPlayerID: [], moves: Array(repeating: nil, count: 9))
+    
     @Published var currentUser: User!
-    @Published var userDetails: SessionUserDetails?
     @Published var alertItem: AlertItem?
     @Published var gameNotification = GameNotification.watingForPlayer
     
@@ -43,7 +38,6 @@ final class GameViewModel: ObservableObject {
         if currentUser == nil {
             saveUser()
         }
-        
     }
     
     func processPlayerOne(for position: Int) {
@@ -150,7 +144,6 @@ final class GameViewModel: ObservableObject {
     //MARK: - User Object
     func saveUser() {
         currentUser = User.new
-        print("************   ", currentUser.id)
         
         do {
             print("encoding user")
@@ -172,14 +165,15 @@ final class GameViewModel: ObservableObject {
         }
     }
     
-    func getTheGame(userId: String) {
+    func getTheGame(sessionUserDetails: SessionUserDetails?) {
+        
         retriveUser()
         
         if currentUser == nil {
             saveUser()
         }
         
-        currentUser.id = userId
+        currentUser.id = sessionUserDetails?.id ?? "na"
         
         TicTactoeServiceImp.shared.startGame(with: currentUser.id)
         TicTactoeServiceImp.shared.$game

@@ -65,7 +65,7 @@ struct GameView: View {
                 }
             }
         }.onAppear {
-            gameViewModel.getTheGame(userId: sessionService.userDetails?.id ?? "na")
+            gameViewModel.getTheGame(sessionUserDetails: sessionService.userDetails)
         }
     }
 }
