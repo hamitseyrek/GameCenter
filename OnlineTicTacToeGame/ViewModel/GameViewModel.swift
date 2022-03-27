@@ -9,7 +9,11 @@ import SwiftUI
 import Combine
 
 final class GameViewModel: ObservableObject {
+    var userIDD: String = ""
+    
     @AppStorage("user") private var userData: Data?
+    
+    @StateObject var sessionService = SessionServiceImpl()
     
     let gridColumns: [GridItem] = [GridItem(.flexible(minimum: 10, maximum: 300)),GridItem(.flexible(minimum: 10, maximum: 300)),GridItem(.flexible(minimum: 10, maximum: 300))]
     
@@ -39,6 +43,7 @@ final class GameViewModel: ObservableObject {
         if currentUser == nil {
             saveUser()
         }
+        
     }
     
     func processPlayerOne(for position: Int) {
@@ -167,11 +172,16 @@ final class GameViewModel: ObservableObject {
         }
     }
     
-    func getTheGame() {
-        SessionServiceImpl.shared.$userDetails
-                .assign(to: \.userDetails, on: self)
-                .store(in: &cancellable)
-        TicTactoeServiceImp.shared.startGame(with: userDetails?.id)
+    func getTheGame(userId: String) {
+        retriveUser()
+        
+        if currentUser == nil {
+            saveUser()
+        }
+        
+        currentUser.id = userId
+        
+        TicTactoeServiceImp.shared.startGame(with: currentUser.id)
         TicTactoeServiceImp.shared.$game
             .assign(to: \.game, on: self)
             .store(in: &cancellable)

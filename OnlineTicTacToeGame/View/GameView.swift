@@ -11,6 +11,8 @@ struct GameView: View {
     
     @ObservedObject var gameViewModel: GameViewModel
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var sessionService: SessionServiceImpl
+    
     
     var body: some View {
         GeometryReader { geometry in
@@ -63,7 +65,7 @@ struct GameView: View {
                 }
             }
         }.onAppear {
-            gameViewModel.getTheGame()
+            gameViewModel.getTheGame(userId: sessionService.userDetails?.id ?? "na")
         }
     }
 }
