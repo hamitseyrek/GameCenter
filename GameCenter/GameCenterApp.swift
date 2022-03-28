@@ -19,6 +19,8 @@ struct GameCenterApp: App {
     
     var body: some Scene {
         WindowGroup {
+        ContentView()
+        /*
             NavigationView {
                 switch sessionService.state {
                 case .loggedIn:
@@ -29,6 +31,8 @@ struct GameCenterApp: App {
             }
             // this fixed navigationTitle constraints error in terminal
             .navigationViewStyle(StackNavigationViewStyle())
+       
+         */
         }
     }
 }
