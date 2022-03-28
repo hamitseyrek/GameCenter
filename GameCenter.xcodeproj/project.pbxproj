@@ -15,7 +15,6 @@
 		5EBB04A127E3B3730056CD58 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB04A027E3B3730056CD58 /* GameModel.swift */; };
 		5EBB04A327E504610056CD58 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB04A227E504610056CD58 /* User.swift */; };
 		5EBB04AF27E5E8830056CD58 /* FirebaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB04AE27E5E8830056CD58 /* FirebaseReference.swift */; };
-		5EBB04B127E5EA070056CD58 /* FirebaseService1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB04B027E5EA070056CD58 /* FirebaseService1.swift */; };
 		5EBB04B327E7A9160056CD58 /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB04B227E7A9160056CD58 /* AlertItem.swift */; };
 		5EBB04B527E8F2480056CD58 /* GameNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB04B427E8F2480056CD58 /* GameNotification.swift */; };
 		5EC1FF2C27EA4509007C101B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1FF2B27EA4509007C101B /* LoginView.swift */; };
@@ -50,6 +49,8 @@
 		5ED4CCCD27E0E4DC00591932 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4CCCC27E0E4DC00591932 /* GameView.swift */; };
 		5ED4CCCF27E0E68A00591932 /* GameButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4CCCE27E0E68A00591932 /* GameButtonView.swift */; };
 		5ED4CCD127E0E89700591932 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4CCD027E0E89700591932 /* HomeViewModel.swift */; };
+		5ED7484527F24D5000057108 /* TicTacToeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7484427F24D5000057108 /* TicTacToeView.swift */; };
+		5ED7484A27F2598E00057108 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7484927F2598E00057108 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,7 +62,6 @@
 		5EBB04A027E3B3730056CD58 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		5EBB04A227E504610056CD58 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5EBB04AE27E5E8830056CD58 /* FirebaseReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseReference.swift; sourceTree = "<group>"; };
-		5EBB04B027E5EA070056CD58 /* FirebaseService1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService1.swift; sourceTree = "<group>"; };
 		5EBB04B227E7A9160056CD58 /* AlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
 		5EBB04B427E8F2480056CD58 /* GameNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNotification.swift; sourceTree = "<group>"; };
 		5EC1FF2B27EA4509007C101B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -91,6 +91,8 @@
 		5ED4CCCC27E0E4DC00591932 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		5ED4CCCE27E0E68A00591932 /* GameButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButtonView.swift; sourceTree = "<group>"; };
 		5ED4CCD027E0E89700591932 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		5ED7484427F24D5000057108 /* TicTacToeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeView.swift; sourceTree = "<group>"; };
+		5ED7484927F2598E00057108 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +115,6 @@
 		5EBB049327E23D1C0056CD58 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5ED4CCCC27E0E4DC00591932 /* GameView.swift */,
 				5ED4CCC027DFDBC600591932 /* HomeView.swift */,
 				5EC1FF2B27EA4509007C101B /* LoginView.swift */,
 				5EC1FF3C27EB9553007C101B /* ForgotPasswordView.swift */,
@@ -126,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				5ED4CCD027E0E89700591932 /* HomeViewModel.swift */,
-				5EBB049B27E3AB2F0056CD58 /* GameViewModel.swift */,
 				5EC1FF4C27EE1404007C101B /* LoginViewModel.swift */,
 				5EC1FF5227EE4B50007C101B /* ForgotPasswordViewModel.swift */,
 				5EC1FF4327EBBE21007C101B /* RegistrationViewModel.swift */,
@@ -137,9 +137,7 @@
 		5EBB049D27E3B1630056CD58 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5EBB049E27E3B1920056CD58 /* MoveModel.swift */,
 				5EBB04A227E504610056CD58 /* User.swift */,
-				5EBB04A027E3B3730056CD58 /* GameModel.swift */,
 				5EC1FF3E27EB9B64007C101B /* RegistrationDetails.swift */,
 			);
 			path = Model;
@@ -149,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				5EBB04B227E7A9160056CD58 /* AlertItem.swift */,
-				5EBB04B427E8F2480056CD58 /* GameNotification.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -192,8 +189,6 @@
 			children = (
 				5EC1FF4127EB9BD2007C101B /* RegistrationService.swift */,
 				5EBB04AE27E5E8830056CD58 /* FirebaseReference.swift */,
-				5EBB04B027E5EA070056CD58 /* FirebaseService1.swift */,
-				5EC1FF5627EE5DAA007C101B /* TicTacToeService.swift */,
 				5EC1FF5027EE49F9007C101B /* ForgotPasswordService.swift */,
 				5EC1FF4E27EE146A007C101B /* LoginService.swift */,
 			);
@@ -244,6 +239,7 @@
 		5ED4CCBD27DFDBC600591932 /* GameCenter */ = {
 			isa = PBXGroup;
 			children = (
+				5ED7483E27F24CE300057108 /* Games */,
 				5EC1FF4027EB9BBD007C101B /* Service */,
 				5EC1FF2F27EA4D90007C101B /* Base */,
 				5EBB04AD27E5E8730056CD58 /* Helper */,
@@ -254,6 +250,7 @@
 				5EC1FF7527F101E5007C101B /* GoogleService-Info.plist */,
 				5ED4CCC227DFDBC800591932 /* Assets.xcassets */,
 				5ED4CCC427DFDBC800591932 /* Preview Content */,
+				5ED7484927F2598E00057108 /* ContentView.swift */,
 			);
 			path = GameCenter;
 			sourceTree = "<group>";
@@ -264,6 +261,68 @@
 				5ED4CCC527DFDBC800591932 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5ED7483E27F24CE300057108 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				5ED7483F27F24CEE00057108 /* TicTacToe */,
+			);
+			path = Games;
+			sourceTree = "<group>";
+		};
+		5ED7483F27F24CEE00057108 /* TicTacToe */ = {
+			isa = PBXGroup;
+			children = (
+				5ED7484827F24DA100057108 /* Helper */,
+				5ED7484327F24D1100057108 /* Service */,
+				5ED7484227F24D0900057108 /* ViewModel */,
+				5ED7484127F24D0200057108 /* Model */,
+				5ED7484027F24CFA00057108 /* View */,
+			);
+			path = TicTacToe;
+			sourceTree = "<group>";
+		};
+		5ED7484027F24CFA00057108 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5ED4CCCC27E0E4DC00591932 /* GameView.swift */,
+				5ED7484427F24D5000057108 /* TicTacToeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5ED7484127F24D0200057108 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5EBB049E27E3B1920056CD58 /* MoveModel.swift */,
+				5EBB04A027E3B3730056CD58 /* GameModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5ED7484227F24D0900057108 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5EBB049B27E3AB2F0056CD58 /* GameViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5ED7484327F24D1100057108 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5EC1FF5627EE5DAA007C101B /* TicTacToeService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		5ED7484827F24DA100057108 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				5EBB04B427E8F2480056CD58 /* GameNotification.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,7 +414,7 @@
 				5EBB04B527E8F2480056CD58 /* GameNotification.swift in Sources */,
 				5EC1FF3B27EB8FF0007C101B /* CloseModifier.swift in Sources */,
 				5EC1FF5327EE4B50007C101B /* ForgotPasswordViewModel.swift in Sources */,
-				5EBB04B127E5EA070056CD58 /* FirebaseService1.swift in Sources */,
+				5ED7484527F24D5000057108 /* TicTacToeView.swift in Sources */,
 				5ED4CCC127DFDBC600591932 /* HomeView.swift in Sources */,
 				5EC1FF4D27EE1404007C101B /* LoginViewModel.swift in Sources */,
 				5EC1FF4F27EE146A007C101B /* LoginService.swift in Sources */,
@@ -364,6 +423,7 @@
 				5EBB049627E2426B0056CD58 /* GameSquareView.swift in Sources */,
 				5EC1FF4427EBBE21007C101B /* RegistrationViewModel.swift in Sources */,
 				5EC1FF3D27EB9553007C101B /* ForgotPasswordView.swift in Sources */,
+				5ED7484A27F2598E00057108 /* ContentView.swift in Sources */,
 				5EC1FF4827EBC28E007C101B /* SessionUserDetails.swift in Sources */,
 				5EC1FF3F27EB9B64007C101B /* RegistrationDetails.swift in Sources */,
 				5EBB049F27E3B1920056CD58 /* MoveModel.swift in Sources */,

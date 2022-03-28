@@ -10,8 +10,8 @@ import Firebase
 import FirebaseFirestoreSwift
 import Combine
 
-final class FirebaseService1:ObservableObject {
-    static let shared = FirebaseService1()
+final class FirebaseSe5rvice1:ObservableObject {
+    static let shared = FirebaseSe5rvice1()
     @Published var game: GameModel!
     
     init() { }

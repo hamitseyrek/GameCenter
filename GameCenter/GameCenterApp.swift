@@ -1,5 +1,5 @@
 //
-//  OnlineTicTacToeGameApp.swift
+//  GameCenterApp.swift
 //  GameCenter
 //
 //  Created by Hamit Seyrek on 14.03.2022.
