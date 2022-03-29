@@ -51,6 +51,10 @@
 		5ED4CCD127E0E89700591932 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4CCD027E0E89700591932 /* HomeViewModel.swift */; };
 		5ED7484527F24D5000057108 /* TicTacToeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7484427F24D5000057108 /* TicTacToeView.swift */; };
 		5ED7484A27F2598E00057108 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7484927F2598E00057108 /* ContentView.swift */; };
+		5ED7484C27F387D800057108 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7484B27F387D800057108 /* CardView.swift */; };
+		5ED7484E27F388E300057108 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7484D27F388E300057108 /* Game.swift */; };
+		5ED7485027F38E9900057108 /* TextStyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7484F27F38E9900057108 /* TextStyleGuide.swift */; };
+		5ED7485227F3975F00057108 /* BottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7485127F3975F00057108 /* BottomBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +97,10 @@
 		5ED4CCD027E0E89700591932 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		5ED7484427F24D5000057108 /* TicTacToeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeView.swift; sourceTree = "<group>"; };
 		5ED7484927F2598E00057108 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5ED7484B27F387D800057108 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		5ED7484D27F388E300057108 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		5ED7484F27F38E9900057108 /* TextStyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyleGuide.swift; sourceTree = "<group>"; };
+		5ED7485127F3975F00057108 /* BottomBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +125,7 @@
 			children = (
 				5ED4CCC027DFDBC600591932 /* HomeView.swift */,
 				5EC1FF2B27EA4509007C101B /* LoginView.swift */,
+				5ED7484B27F387D800057108 /* CardView.swift */,
 				5EC1FF3C27EB9553007C101B /* ForgotPasswordView.swift */,
 				5EC1FF3827EB8E84007C101B /* RegisterView.swift */,
 			);
@@ -139,6 +148,7 @@
 			children = (
 				5EBB04A227E504610056CD58 /* User.swift */,
 				5EC1FF3E27EB9B64007C101B /* RegistrationDetails.swift */,
+				5ED7484D27F388E300057108 /* Game.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				5EC1FF3227EA4DE1007C101B /* PreviewLayoutComponentModifier.swift */,
+				5ED7484F27F38E9900057108 /* TextStyleGuide.swift */,
 				5EC1FF3A27EB8FF0007C101B /* CloseModifier.swift */,
 			);
 			path = Modifier;
@@ -178,6 +189,7 @@
 				5EC1FF2D27EA46CB007C101B /* InputTextFieldView.swift */,
 				5EC1FF3427EA4FFD007C101B /* InputPasswordFieldView.swift */,
 				5EBB049727E2427E0056CD58 /* PlayerIndicatorView.swift */,
+				5ED7485127F3975F00057108 /* BottomBarView.swift */,
 				5EC1FF3627EA5181007C101B /* ButtonComponentView.swift */,
 				5EBB049927E3A7690056CD58 /* LoadingView.swift */,
 			);
@@ -417,14 +429,17 @@
 				5ED7484527F24D5000057108 /* TicTacToeView.swift in Sources */,
 				5ED4CCC127DFDBC600591932 /* HomeView.swift in Sources */,
 				5EC1FF4D27EE1404007C101B /* LoginViewModel.swift in Sources */,
+				5ED7484C27F387D800057108 /* CardView.swift in Sources */,
 				5EC1FF4F27EE146A007C101B /* LoginService.swift in Sources */,
 				5ED4CCCD27E0E4DC00591932 /* GameView.swift in Sources */,
 				5EC1FF5127EE49F9007C101B /* ForgotPasswordService.swift in Sources */,
 				5EBB049627E2426B0056CD58 /* GameSquareView.swift in Sources */,
 				5EC1FF4427EBBE21007C101B /* RegistrationViewModel.swift in Sources */,
 				5EC1FF3D27EB9553007C101B /* ForgotPasswordView.swift in Sources */,
+				5ED7485027F38E9900057108 /* TextStyleGuide.swift in Sources */,
 				5ED7484A27F2598E00057108 /* ContentView.swift in Sources */,
 				5EC1FF4827EBC28E007C101B /* SessionUserDetails.swift in Sources */,
+				5ED7484E27F388E300057108 /* Game.swift in Sources */,
 				5EC1FF3F27EB9B64007C101B /* RegistrationDetails.swift in Sources */,
 				5EBB049F27E3B1920056CD58 /* MoveModel.swift in Sources */,
 				5EC1FF2C27EA4509007C101B /* LoginView.swift in Sources */,
@@ -434,6 +449,7 @@
 				5EBB049A27E3A7690056CD58 /* LoadingView.swift in Sources */,
 				5ED4CCD127E0E89700591932 /* HomeViewModel.swift in Sources */,
 				5ED4CCBF27DFDBC600591932 /* GameCenterApp.swift in Sources */,
+				5ED7485227F3975F00057108 /* BottomBarView.swift in Sources */,
 				5EBB04A327E504610056CD58 /* User.swift in Sources */,
 				5EBB04B327E7A9160056CD58 /* AlertItem.swift in Sources */,
 				5EBB04A127E3B3730056CD58 /* GameModel.swift in Sources */,
