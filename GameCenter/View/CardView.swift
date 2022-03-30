@@ -17,7 +17,7 @@ struct CardView: View {
             
             Image(game.image)
                 .resizable()
-                .frame(maxWidth: UIScreen.main.bounds.width - 50, maxHeight: UIScreen.main.bounds.height / 4)
+                .frame(maxWidth: UIScreen.main.bounds.width - 100, maxHeight: UIScreen.main.bounds.height / 3)
                 .scaledToFill()
             
             Text(game.title)
@@ -30,12 +30,12 @@ struct CardView: View {
         }
         .background(Color("BackgroundField"))
         //.frame(maxWidth: UIScreen.main.bounds.width - 0)
-        .cornerRadius(50)
+        .cornerRadius(22)
     }
 }
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(game: Game.example1())
+        CardView(game: Game.example1()).previewLayout(.sizeThatFits)
     }
 }

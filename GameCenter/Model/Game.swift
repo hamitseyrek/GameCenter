@@ -14,7 +14,7 @@ struct Game {
     let description: String
     
     static func example1() -> Game {
-        Game(image: "TicTacToe", title: "TicTacToe", description: "İki oyunculu online bir oyundur")
+        Game(image: "MyProfile", title: "TicTacToe", description: "İki oyunculu online bir oyundur")
     }
     
     static func example2() -> Game {
