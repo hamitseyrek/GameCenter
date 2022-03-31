@@ -21,8 +21,8 @@ struct SearchTextField: View {
             Image(systemName: "magnifyingglass")
                 .foregroundColor(Color("AccentColor"))
         }
-        .padding()
-        .background(RoundedRectangle(cornerRadius: 10)
+        .padding(6)
+        .background(RoundedRectangle(cornerRadius: 5)
             .fill(Color("BackgroundField")))
     }
 }

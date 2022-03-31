@@ -15,12 +15,18 @@ enum SearchFilter: String, CaseIterable {
 struct CardPickerView: View {
     
     @State private var selection: SearchFilter = .Offline
+    let uiScreenBounds: CGRect
     
     var body: some View {
         
         HStack {
             ForEach(SearchFilter.allCases, id: \.self) { filter in
-                CardPickerItem(searchFilter: filter, selection: $selection)
+                CardPickerItem(searchFilter: filter, selection: selection, uiScreenBounds: uiScreenBounds)
+                    .onTapGesture {
+                        selection = filter
+                    }
+                
+                    Spacer()
             }
         }
     }
@@ -29,10 +35,12 @@ struct CardPickerView: View {
 struct CardPickerItem: View {
     
     var searchFilter: SearchFilter
-    @Binding var selection: SearchFilter
+    var selection: SearchFilter
+    let uiScreenBounds: CGRect
+
     
     var imageName: String {
-        switch selection {
+        switch searchFilter {
         case .Online:
             return "wifi"
         case .Offline:
@@ -53,7 +61,7 @@ struct CardPickerItem: View {
         VStack {
             
             Image(systemName: imageName)
-                .frame(width: 100)
+                .frame(width: uiScreenBounds.width / 2 - 80)
                 .padding()
                 .foregroundColor(selection == searchFilter ? Color.white : Color.gray)
                 .background(RoundedRectangle(cornerRadius: 10).fill(backgroundColor))
@@ -68,6 +76,6 @@ struct CardPickerItem: View {
 
 struct CardPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        CardPickerView()
+        CardPickerView(uiScreenBounds: UIScreen.main.bounds)
     }
 }

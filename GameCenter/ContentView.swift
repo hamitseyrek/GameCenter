@@ -14,34 +14,38 @@ struct ContentView: View {
     
     var body: some View {
         
-        VStack {
+        ScrollView {
             
-            VStack (alignment: .leading, spacing: 10) {
+            VStack {
                 
-                WelcomeHeaderView()
-                    .padding(.horizontal, horizontalPadding)
-                
-                SearchTextField()
-                    .padding(.horizontal, horizontalPadding)
-                
-                CardPickerView()
-                    .padding(.horizontal, horizontalPadding)
-                
-                Text("Recommended Games").modifier(Header3())
-                    .padding(.horizontal, horizontalPadding)
-                
-                ScrollView (.horizontal, showsIndicators: false) {
+                VStack (alignment: .leading, spacing: 13) {
                     
-                    LazyHStack (spacing: 14) {
+                    WelcomeHeaderView()
+                        .padding(.horizontal, horizontalPadding)
+                    
+                    SearchTextField()
+                        .padding(.horizontal, horizontalPadding)
+                    
+                    CardPickerView(uiScreenBounds: UIScreen.main.bounds)
+                        .padding(.horizontal, horizontalPadding)
+                        .padding(.vertical)
+                    
+                    Text("Recommended Games").modifier(Header3())
+                        .padding(.horizontal, horizontalPadding)
+                    
+                    ScrollView (.horizontal, showsIndicators: false) {
                         
-                        CardView(game: Game.example1())
-                            .padding(.leading, 10)
-                        CardView(game: Game.example1())
-                            .padding(.trailing, 10)
+                        LazyHStack (spacing: 14) {
+                            
+                            CardView(game: Game.example1())
+                            
+                            CardView(game: Game.example1())
+                        }
                     }
+                    .padding(.horizontal, horizontalPadding)
                 }
-            }
-            .background(Color("Background"))
+                
+            }.background(Color("Background").edgesIgnoringSafeArea(.all))
         }
     }
 }
