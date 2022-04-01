@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @StateObject var homeViewModel = HomeViewModel()
+    @EnvironmentObject var sessionService: SessionServiceImpl
+    
     let horizontalPadding: CGFloat = 30
     
     var body: some View {
@@ -19,7 +22,7 @@ struct ContentView: View {
                 
                 VStack (alignment: .leading, spacing: 13) {
                     
-                    WelcomeHeaderView()
+                    WelcomeHeaderView(userName: sessionService.userDetails?.firstName ?? "N/A")
                         .padding(.horizontal, horizontalPadding)
                     
                     SearchTextField()

@@ -13,7 +13,7 @@ final class TabBarViewModel: ObservableObject {
     
     let tabBarViewModels = [
         TabItem(imageName: "house", title: "Home", type: .home),
-        .init(imageName: "list.bullet", title: "Activity", type: .blank1),
-        .init(imageName: "arrowshape.bounce.forward", title: "Logout", type: .logout),
+        .init(imageName: "list.bullet", title: "Activity", type: .activity),
+        .init(imageName: "person", title: "Profile", type: .profile),
     ]
 }

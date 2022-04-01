@@ -9,8 +9,8 @@ import SwiftUI
 
 enum TabItemType {
     case home
-    case blank1
-    case logout
+    case activity
+    case profile
 }
 
 struct TabItem: Hashable {

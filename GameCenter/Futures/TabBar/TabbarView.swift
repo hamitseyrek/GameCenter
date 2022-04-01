@@ -10,6 +10,7 @@ import SwiftUI
 struct TabbarView: View {
     
     @StateObject private var tabBarViewModel = TabBarViewModel()
+    @StateObject var sessionService = SessionServiceImpl()
     
     init() {
         UITabBar.appearance().backgroundColor = UIColor(named: "Secondary")
@@ -27,7 +28,7 @@ struct TabbarView: View {
                     .tabItem {
                         Image(systemName: viewModel.imageName)
                         Text(viewModel.title)
-                        if tabBarViewModel.selectedTab == .home {
+                        if self.tabBarViewModel.selectedTab == viewModel.type {
                             Text("o")
                         }
                     }
@@ -44,11 +45,14 @@ struct TabbarView: View {
         switch tabItemType {
         case .home:
             ContentView()
+                .environmentObject(sessionService)
                 .background(Color("Background").edgesIgnoringSafeArea(.all))
-        case .blank1:
+        case .activity:
             Text("2")
-        case .logout:
-            Text("3")
+                .background(Color("Background").edgesIgnoringSafeArea(.all))
+        case .profile:
+            ProfileView()
+                .background(Color("Background").edgesIgnoringSafeArea(.all))
         }
     }
 }

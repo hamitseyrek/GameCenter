@@ -61,6 +61,7 @@
 		5ED7485C27F7A99400057108 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7485B27F7A99400057108 /* TabItem.swift */; };
 		5ED7485E27F7A9B200057108 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7485D27F7A9B200057108 /* TabbarView.swift */; };
 		5ED7486027F7A9F600057108 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7485F27F7A9F600057108 /* TabBarViewModel.swift */; };
+		5ED7486627F7B94400057108 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7486527F7B94400057108 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +114,7 @@
 		5ED7485B27F7A99400057108 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		5ED7485D27F7A9B200057108 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 		5ED7485F27F7A9F600057108 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		5ED7486527F7B94400057108 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,10 +203,7 @@
 				5EC1FF3427EA4FFD007C101B /* InputPasswordFieldView.swift */,
 				5EBB049727E2427E0056CD58 /* PlayerIndicatorView.swift */,
 				5ED7485127F3975F00057108 /* BottomBarView.swift */,
-				5ED7485327F399C100057108 /* WelcomeHeaderView.swift */,
 				5EC1FF3627EA5181007C101B /* ButtonComponentView.swift */,
-				5ED7485527F4CA4900057108 /* SearchTextField.swift */,
-				5ED7485727F4CEFA00057108 /* CardPickerView.swift */,
 				5EBB049927E3A7690056CD58 /* LoadingView.swift */,
 			);
 			path = Views;
@@ -355,6 +354,7 @@
 		5ED7485927F7A97000057108 /* Futures */ = {
 			isa = PBXGroup;
 			children = (
+				5ED7486427F7B92F00057108 /* Profile */,
 				5ED7486127F7B8B300057108 /* Home */,
 				5ED7485A27F7A97B00057108 /* TabBar */,
 			);
@@ -383,8 +383,19 @@
 		5ED7486227F7B8C400057108 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				5ED7485727F4CEFA00057108 /* CardPickerView.swift */,
+				5ED7485527F4CA4900057108 /* SearchTextField.swift */,
+				5ED7485327F399C100057108 /* WelcomeHeaderView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		5ED7486427F7B92F00057108 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				5ED7486527F7B94400057108 /* ProfileView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -509,6 +520,7 @@
 				5EBB04B327E7A9160056CD58 /* AlertItem.swift in Sources */,
 				5EBB04A127E3B3730056CD58 /* GameModel.swift in Sources */,
 				5ED7485E27F7A9B200057108 /* TabbarView.swift in Sources */,
+				5ED7486627F7B94400057108 /* ProfileView.swift in Sources */,
 				5EC1FF3527EA4FFD007C101B /* InputPasswordFieldView.swift in Sources */,
 				5EC1FF3327EA4DE1007C101B /* PreviewLayoutComponentModifier.swift in Sources */,
 				5EC1FF3727EA5181007C101B /* ButtonComponentView.swift in Sources */,

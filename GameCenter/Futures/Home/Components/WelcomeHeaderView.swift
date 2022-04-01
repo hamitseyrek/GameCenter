@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct WelcomeHeaderView: View {
+    
+    let userName: String
+    
     var body: some View {
         
         HStack {
@@ -17,7 +20,7 @@ struct WelcomeHeaderView: View {
                 Text("Günaydın")
                     .modifier(Header2())
                 
-                Text("Hamit")
+                Text(userName)
                     .modifier(Header1())
             }
             
@@ -34,6 +37,6 @@ struct WelcomeHeaderView: View {
 
 struct WelcomeHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeHeaderView()
+        WelcomeHeaderView(userName: "Hamit Seyrek")
     }
 }
