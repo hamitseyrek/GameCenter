@@ -58,6 +58,9 @@
 		5ED7485427F399C100057108 /* WelcomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7485327F399C100057108 /* WelcomeHeaderView.swift */; };
 		5ED7485627F4CA4900057108 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7485527F4CA4900057108 /* SearchTextField.swift */; };
 		5ED7485827F4CEFA00057108 /* CardPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7485727F4CEFA00057108 /* CardPickerView.swift */; };
+		5ED7485C27F7A99400057108 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7485B27F7A99400057108 /* TabItem.swift */; };
+		5ED7485E27F7A9B200057108 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7485D27F7A9B200057108 /* TabbarView.swift */; };
+		5ED7486027F7A9F600057108 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7485F27F7A9F600057108 /* TabBarViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +110,9 @@
 		5ED7485327F399C100057108 /* WelcomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeHeaderView.swift; sourceTree = "<group>"; };
 		5ED7485527F4CA4900057108 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		5ED7485727F4CEFA00057108 /* CardPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPickerView.swift; sourceTree = "<group>"; };
+		5ED7485B27F7A99400057108 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		5ED7485D27F7A9B200057108 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
+		5ED7485F27F7A9F600057108 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +135,6 @@
 		5EBB049327E23D1C0056CD58 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5ED4CCC027DFDBC600591932 /* HomeView.swift */,
 				5EC1FF2B27EA4509007C101B /* LoginView.swift */,
 				5ED7484B27F387D800057108 /* CardView.swift */,
 				5EC1FF3C27EB9553007C101B /* ForgotPasswordView.swift */,
@@ -260,6 +265,7 @@
 		5ED4CCBD27DFDBC600591932 /* GameCenter */ = {
 			isa = PBXGroup;
 			children = (
+				5ED7485927F7A97000057108 /* Futures */,
 				5ED7483E27F24CE300057108 /* Games */,
 				5EC1FF4027EB9BBD007C101B /* Service */,
 				5EC1FF2F27EA4D90007C101B /* Base */,
@@ -344,6 +350,41 @@
 				5EBB04B427E8F2480056CD58 /* GameNotification.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		5ED7485927F7A97000057108 /* Futures */ = {
+			isa = PBXGroup;
+			children = (
+				5ED7486127F7B8B300057108 /* Home */,
+				5ED7485A27F7A97B00057108 /* TabBar */,
+			);
+			path = Futures;
+			sourceTree = "<group>";
+		};
+		5ED7485A27F7A97B00057108 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				5ED7485B27F7A99400057108 /* TabItem.swift */,
+				5ED7485D27F7A9B200057108 /* TabbarView.swift */,
+				5ED7485F27F7A9F600057108 /* TabBarViewModel.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		5ED7486127F7B8B300057108 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5ED4CCC027DFDBC600591932 /* HomeView.swift */,
+				5ED7486227F7B8C400057108 /* Components */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		5ED7486227F7B8C400057108 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,6 +479,7 @@
 				5ED7484527F24D5000057108 /* TicTacToeView.swift in Sources */,
 				5ED4CCC127DFDBC600591932 /* HomeView.swift in Sources */,
 				5EC1FF4D27EE1404007C101B /* LoginViewModel.swift in Sources */,
+				5ED7486027F7A9F600057108 /* TabBarViewModel.swift in Sources */,
 				5ED7484C27F387D800057108 /* CardView.swift in Sources */,
 				5EC1FF4F27EE146A007C101B /* LoginService.swift in Sources */,
 				5ED4CCCD27E0E4DC00591932 /* GameView.swift in Sources */,
@@ -445,6 +487,7 @@
 				5EBB049627E2426B0056CD58 /* GameSquareView.swift in Sources */,
 				5EC1FF4427EBBE21007C101B /* RegistrationViewModel.swift in Sources */,
 				5EC1FF3D27EB9553007C101B /* ForgotPasswordView.swift in Sources */,
+				5ED7485C27F7A99400057108 /* TabItem.swift in Sources */,
 				5ED7485027F38E9900057108 /* TextStyleGuide.swift in Sources */,
 				5ED7485427F399C100057108 /* WelcomeHeaderView.swift in Sources */,
 				5ED7484A27F2598E00057108 /* ContentView.swift in Sources */,
@@ -465,6 +508,7 @@
 				5EBB04A327E504610056CD58 /* User.swift in Sources */,
 				5EBB04B327E7A9160056CD58 /* AlertItem.swift in Sources */,
 				5EBB04A127E3B3730056CD58 /* GameModel.swift in Sources */,
+				5ED7485E27F7A9B200057108 /* TabbarView.swift in Sources */,
 				5EC1FF3527EA4FFD007C101B /* InputPasswordFieldView.swift in Sources */,
 				5EC1FF3327EA4DE1007C101B /* PreviewLayoutComponentModifier.swift in Sources */,
 				5EC1FF3727EA5181007C101B /* ButtonComponentView.swift in Sources */,

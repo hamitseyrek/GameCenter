@@ -56,7 +56,7 @@ struct BottomBarView: View {
                         Text("o")
                     }
                 }
-        }
+        }.padding(.bottom, -60)
         .accentColor(Color.white)
     }
 }

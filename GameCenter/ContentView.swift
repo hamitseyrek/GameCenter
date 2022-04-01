@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     
-    //@StateObject var sessionService = SessionServiceImpl()
     let horizontalPadding: CGFloat = 30
     
     var body: some View {
