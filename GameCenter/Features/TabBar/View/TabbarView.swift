@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct TabbarView: View {
+struct TabBarView: View {
     
     @StateObject private var tabBarViewModel = TabBarViewModel()
-    @StateObject var sessionService = SessionServiceImpl()
+    @EnvironmentObject var sessionService: SessionServiceImpl
     
     init() {
         UITabBar.appearance().backgroundColor = UIColor(named: "Secondary")
@@ -35,7 +35,7 @@ struct TabbarView: View {
                     .tag(viewModel.type)
             }
         }
-        .padding(.bottom, -60)
+        .padding(.bottom, -50)
         .accentColor(Color.white)
     }
     
@@ -44,7 +44,7 @@ struct TabbarView: View {
         
         switch tabItemType {
         case .home:
-            ContentView()
+            HomeView()
                 .environmentObject(sessionService)
                 .background(Color("Background").edgesIgnoringSafeArea(.all))
         case .activity:
@@ -60,6 +60,6 @@ struct TabbarView: View {
 
 struct TabbarView_Previews: PreviewProvider {
     static var previews: some View {
-        TabbarView()
+        TabBarView()
     }
 }
