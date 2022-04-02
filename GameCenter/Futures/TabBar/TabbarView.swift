@@ -52,6 +52,7 @@ struct TabbarView: View {
                 .background(Color("Background").edgesIgnoringSafeArea(.all))
         case .profile:
             ProfileView()
+                .environmentObject(sessionService)
                 .background(Color("Background").edgesIgnoringSafeArea(.all))
         }
     }

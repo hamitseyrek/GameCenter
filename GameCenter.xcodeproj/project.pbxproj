@@ -54,7 +54,6 @@
 		5ED7484C27F387D800057108 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7484B27F387D800057108 /* CardView.swift */; };
 		5ED7484E27F388E300057108 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7484D27F388E300057108 /* Game.swift */; };
 		5ED7485027F38E9900057108 /* TextStyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7484F27F38E9900057108 /* TextStyleGuide.swift */; };
-		5ED7485227F3975F00057108 /* BottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7485127F3975F00057108 /* BottomBarView.swift */; };
 		5ED7485427F399C100057108 /* WelcomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7485327F399C100057108 /* WelcomeHeaderView.swift */; };
 		5ED7485627F4CA4900057108 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7485527F4CA4900057108 /* SearchTextField.swift */; };
 		5ED7485827F4CEFA00057108 /* CardPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7485727F4CEFA00057108 /* CardPickerView.swift */; };
@@ -107,7 +106,6 @@
 		5ED7484B27F387D800057108 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		5ED7484D27F388E300057108 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		5ED7484F27F38E9900057108 /* TextStyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyleGuide.swift; sourceTree = "<group>"; };
-		5ED7485127F3975F00057108 /* BottomBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarView.swift; sourceTree = "<group>"; };
 		5ED7485327F399C100057108 /* WelcomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeHeaderView.swift; sourceTree = "<group>"; };
 		5ED7485527F4CA4900057108 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		5ED7485727F4CEFA00057108 /* CardPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPickerView.swift; sourceTree = "<group>"; };
@@ -134,38 +132,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5EBB049327E23D1C0056CD58 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				5EC1FF2B27EA4509007C101B /* LoginView.swift */,
-				5ED7484B27F387D800057108 /* CardView.swift */,
-				5EC1FF3C27EB9553007C101B /* ForgotPasswordView.swift */,
-				5EC1FF3827EB8E84007C101B /* RegisterView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		5EBB049427E23D400056CD58 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				5ED4CCD027E0E89700591932 /* HomeViewModel.swift */,
-				5EC1FF4C27EE1404007C101B /* LoginViewModel.swift */,
-				5EC1FF5227EE4B50007C101B /* ForgotPasswordViewModel.swift */,
-				5EC1FF4327EBBE21007C101B /* RegistrationViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		5EBB049D27E3B1630056CD58 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				5EBB04A227E504610056CD58 /* User.swift */,
-				5EC1FF3E27EB9B64007C101B /* RegistrationDetails.swift */,
-				5ED7484D27F388E300057108 /* Game.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		5EBB04AD27E5E8730056CD58 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,8 +143,8 @@
 		5EC1FF2F27EA4D90007C101B /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				5ED7487827F7CAB900057108 /* Firebase */,
 				5EC1FF4527EBC26E007C101B /* Session */,
-				5EC1FF3127EA4DA5007C101B /* Views */,
 				5EC1FF3027EA4D98007C101B /* Modifier */,
 			);
 			path = Base;
@@ -188,36 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				5EC1FF3227EA4DE1007C101B /* PreviewLayoutComponentModifier.swift */,
-				5ED7484F27F38E9900057108 /* TextStyleGuide.swift */,
 				5EC1FF3A27EB8FF0007C101B /* CloseModifier.swift */,
 			);
 			path = Modifier;
-			sourceTree = "<group>";
-		};
-		5EC1FF3127EA4DA5007C101B /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				5ED4CCCE27E0E68A00591932 /* GameButtonView.swift */,
-				5EBB049527E2426B0056CD58 /* GameSquareView.swift */,
-				5EC1FF2D27EA46CB007C101B /* InputTextFieldView.swift */,
-				5EC1FF3427EA4FFD007C101B /* InputPasswordFieldView.swift */,
-				5EBB049727E2427E0056CD58 /* PlayerIndicatorView.swift */,
-				5ED7485127F3975F00057108 /* BottomBarView.swift */,
-				5EC1FF3627EA5181007C101B /* ButtonComponentView.swift */,
-				5EBB049927E3A7690056CD58 /* LoadingView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		5EC1FF4027EB9BBD007C101B /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				5EC1FF4127EB9BD2007C101B /* RegistrationService.swift */,
-				5EBB04AE27E5E8830056CD58 /* FirebaseReference.swift */,
-				5EC1FF5027EE49F9007C101B /* ForgotPasswordService.swift */,
-				5EC1FF4E27EE146A007C101B /* LoginService.swift */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		5EC1FF4527EBC26E007C101B /* Session */ = {
@@ -266,12 +205,8 @@
 			children = (
 				5ED7485927F7A97000057108 /* Futures */,
 				5ED7483E27F24CE300057108 /* Games */,
-				5EC1FF4027EB9BBD007C101B /* Service */,
 				5EC1FF2F27EA4D90007C101B /* Base */,
 				5EBB04AD27E5E8730056CD58 /* Helper */,
-				5EBB049D27E3B1630056CD58 /* Model */,
-				5EBB049327E23D1C0056CD58 /* View */,
-				5EBB049427E23D400056CD58 /* ViewModel */,
 				5ED4CCBE27DFDBC600591932 /* GameCenterApp.swift */,
 				5EC1FF7527F101E5007C101B /* GoogleService-Info.plist */,
 				5ED4CCC227DFDBC800591932 /* Assets.xcassets */,
@@ -300,6 +235,7 @@
 		5ED7483F27F24CEE00057108 /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
+				5ED7486B27F7C76000057108 /* Base */,
 				5ED7484827F24DA100057108 /* Helper */,
 				5ED7484327F24D1100057108 /* Service */,
 				5ED7484227F24D0900057108 /* ViewModel */,
@@ -354,6 +290,7 @@
 		5ED7485927F7A97000057108 /* Futures */ = {
 			isa = PBXGroup;
 			children = (
+				5ED7486727F7C6C700057108 /* Login */,
 				5ED7486427F7B92F00057108 /* Profile */,
 				5ED7486127F7B8B300057108 /* Home */,
 				5ED7485A27F7A97B00057108 /* TabBar */,
@@ -374,20 +311,12 @@
 		5ED7486127F7B8B300057108 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				5ED4CCC027DFDBC600591932 /* HomeView.swift */,
-				5ED7486227F7B8C400057108 /* Components */,
+				5ED7487627F7CA4000057108 /* Model */,
+				5ED7486F27F7C87600057108 /* ViewModel */,
+				5ED7486E27F7C86F00057108 /* Base */,
+				5ED7486D27F7C86600057108 /* View */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		5ED7486227F7B8C400057108 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				5ED7485727F4CEFA00057108 /* CardPickerView.swift */,
-				5ED7485527F4CA4900057108 /* SearchTextField.swift */,
-				5ED7485327F399C100057108 /* WelcomeHeaderView.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		5ED7486427F7B92F00057108 /* Profile */ = {
@@ -396,6 +325,154 @@
 				5ED7486527F7B94400057108 /* ProfileView.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		5ED7486727F7C6C700057108 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				5ED7487127F7C8C000057108 /* Base */,
+				5ED7486A27F7C71400057108 /* ViewModel */,
+				5ED7486927F7C70D00057108 /* Model */,
+				5ED7486827F7C70600057108 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		5ED7486827F7C70600057108 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5EC1FF2B27EA4509007C101B /* LoginView.swift */,
+				5EC1FF3C27EB9553007C101B /* ForgotPasswordView.swift */,
+				5EC1FF3827EB8E84007C101B /* RegisterView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5ED7486927F7C70D00057108 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5EC1FF3E27EB9B64007C101B /* RegistrationDetails.swift */,
+				5EBB04A227E504610056CD58 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5ED7486A27F7C71400057108 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5EC1FF4327EBBE21007C101B /* RegistrationViewModel.swift */,
+				5EC1FF4C27EE1404007C101B /* LoginViewModel.swift */,
+				5EC1FF5227EE4B50007C101B /* ForgotPasswordViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5ED7486B27F7C76000057108 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5ED7486C27F7C7AB00057108 /* Views */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		5ED7486C27F7C7AB00057108 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5EBB049527E2426B0056CD58 /* GameSquareView.swift */,
+				5EBB049927E3A7690056CD58 /* LoadingView.swift */,
+				5EBB049727E2427E0056CD58 /* PlayerIndicatorView.swift */,
+				5ED4CCCE27E0E68A00591932 /* GameButtonView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5ED7486D27F7C86600057108 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5ED4CCC027DFDBC600591932 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5ED7486E27F7C86F00057108 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5ED7487727F7CA6000057108 /* Modifier */,
+				5ED7487027F7C88300057108 /* Views */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		5ED7486F27F7C87600057108 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5ED4CCD027E0E89700591932 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5ED7487027F7C88300057108 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5ED7485527F4CA4900057108 /* SearchTextField.swift */,
+				5EC1FF3627EA5181007C101B /* ButtonComponentView.swift */,
+				5ED7484B27F387D800057108 /* CardView.swift */,
+				5ED7485327F399C100057108 /* WelcomeHeaderView.swift */,
+				5ED7485727F4CEFA00057108 /* CardPickerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5ED7487127F7C8C000057108 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5ED7487327F7C8F900057108 /* Services */,
+				5ED7487227F7C8C700057108 /* Views */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		5ED7487227F7C8C700057108 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5EC1FF3427EA4FFD007C101B /* InputPasswordFieldView.swift */,
+				5EC1FF2D27EA46CB007C101B /* InputTextFieldView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5ED7487327F7C8F900057108 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5EC1FF4E27EE146A007C101B /* LoginService.swift */,
+				5EC1FF5027EE49F9007C101B /* ForgotPasswordService.swift */,
+				5EC1FF4127EB9BD2007C101B /* RegistrationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5ED7487627F7CA4000057108 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5ED7484D27F388E300057108 /* Game.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5ED7487727F7CA6000057108 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				5ED7484F27F38E9900057108 /* TextStyleGuide.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
+		5ED7487827F7CAB900057108 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				5EBB04AE27E5E8830056CD58 /* FirebaseReference.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -515,7 +592,6 @@
 				5EBB049A27E3A7690056CD58 /* LoadingView.swift in Sources */,
 				5ED4CCD127E0E89700591932 /* HomeViewModel.swift in Sources */,
 				5ED4CCBF27DFDBC600591932 /* GameCenterApp.swift in Sources */,
-				5ED7485227F3975F00057108 /* BottomBarView.swift in Sources */,
 				5EBB04A327E504610056CD58 /* User.swift in Sources */,
 				5EBB04B327E7A9160056CD58 /* AlertItem.swift in Sources */,
 				5EBB04A127E3B3730056CD58 /* GameModel.swift in Sources */,
