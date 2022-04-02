@@ -55,7 +55,7 @@
 		5ED7485027F38E9900057108 /* TextStyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7484F27F38E9900057108 /* TextStyleGuide.swift */; };
 		5ED7485427F399C100057108 /* WelcomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7485327F399C100057108 /* WelcomeHeaderView.swift */; };
 		5ED7485627F4CA4900057108 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7485527F4CA4900057108 /* SearchTextField.swift */; };
-		5ED7485827F4CEFA00057108 /* CardPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7485727F4CEFA00057108 /* CardPickerView.swift */; };
+		5ED7485827F4CEFA00057108 /* GameCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7485727F4CEFA00057108 /* GameCategoryView.swift */; };
 		5ED7485C27F7A99400057108 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7485B27F7A99400057108 /* TabItem.swift */; };
 		5ED7485E27F7A9B200057108 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7485D27F7A9B200057108 /* TabBarView.swift */; };
 		5ED7486027F7A9F600057108 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7485F27F7A9F600057108 /* TabBarViewModel.swift */; };
@@ -106,7 +106,7 @@
 		5ED7484F27F38E9900057108 /* TextStyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyleGuide.swift; sourceTree = "<group>"; };
 		5ED7485327F399C100057108 /* WelcomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeHeaderView.swift; sourceTree = "<group>"; };
 		5ED7485527F4CA4900057108 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
-		5ED7485727F4CEFA00057108 /* CardPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPickerView.swift; sourceTree = "<group>"; };
+		5ED7485727F4CEFA00057108 /* GameCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCategoryView.swift; sourceTree = "<group>"; };
 		5ED7485B27F7A99400057108 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		5ED7485D27F7A9B200057108 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		5ED7485F27F7A9F600057108 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
@@ -408,7 +408,7 @@
 				5EC1FF3627EA5181007C101B /* ButtonComponentView.swift */,
 				5ED7484B27F387D800057108 /* CardView.swift */,
 				5ED7485327F399C100057108 /* WelcomeHeaderView.swift */,
-				5ED7485727F4CEFA00057108 /* CardPickerView.swift */,
+				5ED7485727F4CEFA00057108 /* GameCategoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -599,7 +599,7 @@
 				5EC1FF2C27EA4509007C101B /* LoginView.swift in Sources */,
 				5EC1FF4227EB9BD2007C101B /* RegistrationService.swift in Sources */,
 				5EC1FF4B27EBC2F9007C101B /* SessionService.swift in Sources */,
-				5ED7485827F4CEFA00057108 /* CardPickerView.swift in Sources */,
+				5ED7485827F4CEFA00057108 /* GameCategoryView.swift in Sources */,
 				5EC1FF3927EB8E84007C101B /* RegisterView.swift in Sources */,
 				5EBB049A27E3A7690056CD58 /* LoadingView.swift in Sources */,
 				5ED4CCD127E0E89700591932 /* HomeViewModel.swift in Sources */,

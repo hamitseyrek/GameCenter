@@ -12,7 +12,7 @@ enum SearchFilter: String, CaseIterable {
     case Offline = "Offline Games"
 }
 
-struct CardPickerView: View {
+struct GameCategoryView: View {
     
     @State private var selection: SearchFilter = .Offline
     let uiScreenBounds: CGRect
@@ -21,7 +21,7 @@ struct CardPickerView: View {
         
         HStack {
             ForEach(SearchFilter.allCases, id: \.self) { filter in
-                CardPickerItem(searchFilter: filter, selection: selection, uiScreenBounds: uiScreenBounds)
+                GameCategoryItem(searchFilter: filter, selection: selection, uiScreenBounds: uiScreenBounds)
                     .onTapGesture {
                         selection = filter
                     }
@@ -32,7 +32,7 @@ struct CardPickerView: View {
     }
 }
 
-struct CardPickerItem: View {
+struct GameCategoryItem: View {
     
     var searchFilter: SearchFilter
     var selection: SearchFilter
@@ -66,7 +66,7 @@ struct CardPickerItem: View {
                 .foregroundColor(selection == searchFilter ? Color.white : Color.gray)
                 .background(RoundedRectangle(cornerRadius: 10).fill(backgroundColor))
             
-            Text(selection.rawValue)
+            Text(searchFilter.rawValue)
                 .foregroundColor(tintColor)
                 .modifier(FootNote())
         }
@@ -74,8 +74,8 @@ struct CardPickerItem: View {
     }
 }
 
-struct CardPickerView_Previews: PreviewProvider {
+struct GameCategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        CardPickerView(uiScreenBounds: UIScreen.main.bounds)
+        GameCategoryView(uiScreenBounds: UIScreen.main.bounds)
     }
 }

@@ -60,6 +60,6 @@ struct TabBarView: View {
 
 struct TabbarView_Previews: PreviewProvider {
     static var previews: some View {
-        TabBarView()
+        TabBarView().environmentObject(SessionServiceImpl())
     }
 }

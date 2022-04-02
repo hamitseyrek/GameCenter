@@ -18,7 +18,7 @@ struct WelcomeHeaderView: View {
             VStack (alignment: .leading, spacing: 5) {
                 
                 Text("Günaydın")
-                    .modifier(Header2())
+                    .modifier(Header3())
                 
                 Text(userName)
                     .modifier(Header1())
@@ -29,7 +29,7 @@ struct WelcomeHeaderView: View {
             Image("MyProfile")
                 .resizable()
                 .scaledToFill()
-                .frame(width: 80, height: 80)
+                .frame(width: 70, height: 70)
                 .clipShape(Circle())
         }
     }

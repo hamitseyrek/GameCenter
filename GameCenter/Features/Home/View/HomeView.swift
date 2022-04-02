@@ -30,7 +30,7 @@ struct HomeView: View {
                     SearchTextField()
                         .padding(.horizontal, horizontalPadding)
                     
-                    CardPickerView(uiScreenBounds: UIScreen.main.bounds)
+                    GameCategoryView(uiScreenBounds: UIScreen.main.bounds)
                         .padding(.horizontal, horizontalPadding)
                         .padding(.vertical)
                     
