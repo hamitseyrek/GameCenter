@@ -19,20 +19,16 @@ struct GameCenterApp: App {
     
     var body: some Scene {
         WindowGroup {
-        ContentView()
-        /*
-            NavigationView {
+            //NavigationView {
                 switch sessionService.state {
                 case .loggedIn:
-                    HomeView().environmentObject(sessionService)
+                    TabBarView().environmentObject(sessionService)
                 case .loggedOut:
                     LoginView()
                 }
-            }
-            // this fixed navigationTitle constraints error in terminal
-            .navigationViewStyle(StackNavigationViewStyle())
-       
-         */
+            //}
+            // // this fixed navigationTitle constraints error in terminal
+            //.navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }

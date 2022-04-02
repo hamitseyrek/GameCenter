@@ -2,12 +2,14 @@
 //  ContentView.swift
 //  GameCenter
 //
-//  Created by Hamit Seyrek on 29.03.2022.
+//  Created by Hamit Seyrek on 14.03.2022.
 //
 
 import SwiftUI
+import FirebaseFirestoreSwift
+import Firebase
 
-struct ContentView: View {
+struct HomeView: View {
     
     @StateObject var homeViewModel = HomeViewModel()
     @EnvironmentObject var sessionService: SessionServiceImpl
@@ -64,10 +66,11 @@ struct ContentView: View {
     }
 }
 
-
-
-struct ContentView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        NavigationView {
+            HomeView()
+                .environmentObject(SessionServiceImpl())
+        }
     }
 }
