@@ -10,10 +10,11 @@ import Foundation
 import SpriteKit
 import GameKit
 
-class GameScene: SKScene {
+class BreakoutGameScene: SKScene {
     
     let background = SKSpriteNode(imageNamed: "breakoutBackground")
     let paddel = SKSpriteNode(imageNamed: "breakoutPaddle")
+    let ball = SKSpriteNode(imageNamed: "breakoutBall")
     
     override func didMove (to view: SKView) {
         
@@ -26,6 +27,17 @@ class GameScene: SKScene {
         background.setScale(0.65)
         addChild (background)
         
+        // Player and Ball
+        paddel.position = CGPoint(x: size.width / 2, y: 25)
+        paddel.zPosition = 10
+        addChild(paddel)
+        
+        ball.position.x = paddel.position.x
+        ball.position.y = paddel.position.y + ball.size.height / 2
+        ball.size.width = ball.size.width / 2
+        ball.size.height = ball.size.height / 2
+        ball.zPosition = 10
+        addChild (ball)
         
     }
 }

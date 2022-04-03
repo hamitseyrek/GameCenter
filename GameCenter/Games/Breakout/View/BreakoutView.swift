@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+import SpriteKit
 
 struct BreakoutView: View {
+    
+    let scene = BreakoutGameScene()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        SpriteView(scene: scene)
+            .edgesIgnoringSafeArea(.all)
     }
 }
 
