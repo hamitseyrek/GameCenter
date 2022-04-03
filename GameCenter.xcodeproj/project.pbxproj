@@ -60,6 +60,8 @@
 		5ED7485E27F7A9B200057108 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7485D27F7A9B200057108 /* TabBarView.swift */; };
 		5ED7486027F7A9F600057108 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7485F27F7A9F600057108 /* TabBarViewModel.swift */; };
 		5ED7486627F7B94400057108 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7486527F7B94400057108 /* ProfileView.swift */; };
+		5ED7488527F91B0800057108 /* BreakoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7488427F91B0800057108 /* BreakoutView.swift */; };
+		5ED7488727F9211C00057108 /* BreakoutScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7488627F9211C00057108 /* BreakoutScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +113,8 @@
 		5ED7485D27F7A9B200057108 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		5ED7485F27F7A9F600057108 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		5ED7486527F7B94400057108 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		5ED7488427F91B0800057108 /* BreakoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakoutView.swift; sourceTree = "<group>"; };
+		5ED7488627F9211C00057108 /* BreakoutScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakoutScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +228,7 @@
 		5ED7483E27F24CE300057108 /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				5ED7487D27F91A3D00057108 /* Breakout */,
 				5ED7483F27F24CEE00057108 /* TicTacToe */,
 			);
 			path = Games;
@@ -233,7 +238,6 @@
 			isa = PBXGroup;
 			children = (
 				5ED7486B27F7C76000057108 /* Base */,
-				5ED7484327F24D1100057108 /* Service */,
 				5ED7484227F24D0900057108 /* ViewModel */,
 				5ED7484127F24D0200057108 /* Model */,
 				5ED7484027F24CFA00057108 /* View */,
@@ -360,6 +364,7 @@
 		5ED7486B27F7C76000057108 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				5ED7484327F24D1100057108 /* Service */,
 				5ED7486C27F7C7AB00057108 /* Views */,
 			);
 			path = Base;
@@ -488,6 +493,63 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5ED7487D27F91A3D00057108 /* Breakout */ = {
+			isa = PBXGroup;
+			children = (
+				5ED7488127F91A7A00057108 /* Base */,
+				5ED7488027F91A6D00057108 /* ViewModel */,
+				5ED7487F27F91A6500057108 /* Model */,
+				5ED7487E27F91A5E00057108 /* View */,
+			);
+			path = Breakout;
+			sourceTree = "<group>";
+		};
+		5ED7487E27F91A5E00057108 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5ED7488427F91B0800057108 /* BreakoutView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5ED7487F27F91A6500057108 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5ED7488027F91A6D00057108 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5ED7488127F91A7A00057108 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5ED7488327F91A8C00057108 /* Service */,
+				5ED7488227F91A8200057108 /* Views */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		5ED7488227F91A8200057108 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5ED7488627F9211C00057108 /* BreakoutScene.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5ED7488327F91A8C00057108 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -570,6 +632,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ED7488527F91B0800057108 /* BreakoutView.swift in Sources */,
 				5EBB049C27E3AB2F0056CD58 /* GameViewModel.swift in Sources */,
 				5EBB04AF27E5E8830056CD58 /* FirebaseReference.swift in Sources */,
 				5ED4CCCF27E0E68A00591932 /* GameButtonView.swift in Sources */,
@@ -594,6 +657,7 @@
 				5EC1FF4827EBC28E007C101B /* SessionUserDetails.swift in Sources */,
 				5ED7485627F4CA4900057108 /* SearchTextField.swift in Sources */,
 				5ED7484E27F388E300057108 /* Game.swift in Sources */,
+				5ED7488727F9211C00057108 /* BreakoutScene.swift in Sources */,
 				5EC1FF3F27EB9B64007C101B /* RegistrationDetails.swift in Sources */,
 				5EBB049F27E3B1920056CD58 /* MoveModel.swift in Sources */,
 				5EC1FF2C27EA4509007C101B /* LoginView.swift in Sources */,
