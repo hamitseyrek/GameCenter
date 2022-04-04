@@ -62,6 +62,9 @@
 		5ED7486627F7B94400057108 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7486527F7B94400057108 /* ProfileView.swift */; };
 		5ED7488527F91B0800057108 /* BreakoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7488427F91B0800057108 /* BreakoutView.swift */; };
 		5ED7488727F9211C00057108 /* BreakoutScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7488627F9211C00057108 /* BreakoutScene.swift */; };
+		5EDCC6C127FA73D300C0DD48 /* BreakoutGameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDCC6C027FA73D300C0DD48 /* BreakoutGameOverScene.swift */; };
+		5EDCC6C427FA7E8D00C0DD48 /* fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5EDCC6C227FA7E8D00C0DD48 /* fire.sks */; };
+		5EDCC6C527FA7E8D00C0DD48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EDCC6C327FA7E8D00C0DD48 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +118,9 @@
 		5ED7486527F7B94400057108 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		5ED7488427F91B0800057108 /* BreakoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakoutView.swift; sourceTree = "<group>"; };
 		5ED7488627F9211C00057108 /* BreakoutScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakoutScene.swift; sourceTree = "<group>"; };
+		5EDCC6C027FA73D300C0DD48 /* BreakoutGameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakoutGameOverScene.swift; sourceTree = "<group>"; };
+		5EDCC6C227FA7E8D00C0DD48 /* fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = fire.sks; sourceTree = "<group>"; };
+		5EDCC6C327FA7E8D00C0DD48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -539,6 +545,9 @@
 			isa = PBXGroup;
 			children = (
 				5ED7488627F9211C00057108 /* BreakoutScene.swift */,
+				5EDCC6C027FA73D300C0DD48 /* BreakoutGameOverScene.swift */,
+				5EDCC6C227FA7E8D00C0DD48 /* fire.sks */,
+				5EDCC6C327FA7E8D00C0DD48 /* Assets.xcassets */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -620,8 +629,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ED4CCC627DFDBC800591932 /* Preview Assets.xcassets in Resources */,
+				5EDCC6C427FA7E8D00C0DD48 /* fire.sks in Resources */,
 				5ED4CCC327DFDBC800591932 /* Assets.xcassets in Resources */,
 				5EC1FF7627F101E5007C101B /* GoogleService-Info.plist in Resources */,
+				5EDCC6C527FA7E8D00C0DD48 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +673,7 @@
 				5EBB049F27E3B1920056CD58 /* MoveModel.swift in Sources */,
 				5EC1FF2C27EA4509007C101B /* LoginView.swift in Sources */,
 				5EC1FF4227EB9BD2007C101B /* RegistrationService.swift in Sources */,
+				5EDCC6C127FA73D300C0DD48 /* BreakoutGameOverScene.swift in Sources */,
 				5EC1FF4B27EBC2F9007C101B /* SessionService.swift in Sources */,
 				5ED7485827F4CEFA00057108 /* GameCategoryView.swift in Sources */,
 				5EC1FF3927EB8E84007C101B /* RegisterView.swift in Sources */,

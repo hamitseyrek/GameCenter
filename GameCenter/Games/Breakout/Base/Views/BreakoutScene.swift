@@ -92,6 +92,10 @@ class BreakoutGameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.isPaused = false
+    }
+    
     override func update (_ currentTime: TimeInterval) {
         
         if paddel.position.x < 50 {
@@ -154,5 +158,18 @@ class BreakoutGameScene: SKScene, SKPhysicsContactDelegate {
                 contactB.node?.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 10))
             }
         }
+        
+        if contactA.categoryBitMask == bitmasks.frame.rawValue && contactB.categoryBitMask == bitmasks.ball.rawValue {
+             let yPos = contact.contactPoint.y
+             if yPos <= self.frame.minY + 10 {
+                 gameOver ()
+             }
+        }
+    }
+    
+    func gameOver() {
+        let gameOverScene = BreakoutGameOverScene(size: self.size)
+        let transition = SKTransition.flipHorizontal(withDuration: 2)
+        self.view?.presentScene(gameOverScene, transition: transition)
     }
 }
