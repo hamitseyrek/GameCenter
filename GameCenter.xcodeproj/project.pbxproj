@@ -65,6 +65,8 @@
 		5EDCC6C127FA73D300C0DD48 /* BreakoutGameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDCC6C027FA73D300C0DD48 /* BreakoutGameOverScene.swift */; };
 		5EDCC6C427FA7E8D00C0DD48 /* fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5EDCC6C227FA7E8D00C0DD48 /* fire.sks */; };
 		5EDCC6C527FA7E8D00C0DD48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EDCC6C327FA7E8D00C0DD48 /* Assets.xcassets */; };
+		5EDCC6C727FBA6DB00C0DD48 /* BreakoutFinishScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDCC6C627FBA6DB00C0DD48 /* BreakoutFinishScene.swift */; };
+		5EDCC6C927FBA8D800C0DD48 /* finishSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5EDCC6C827FBA8D800C0DD48 /* finishSpark.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +123,8 @@
 		5EDCC6C027FA73D300C0DD48 /* BreakoutGameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakoutGameOverScene.swift; sourceTree = "<group>"; };
 		5EDCC6C227FA7E8D00C0DD48 /* fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = fire.sks; sourceTree = "<group>"; };
 		5EDCC6C327FA7E8D00C0DD48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5EDCC6C627FBA6DB00C0DD48 /* BreakoutFinishScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakoutFinishScene.swift; sourceTree = "<group>"; };
+		5EDCC6C827FBA8D800C0DD48 /* finishSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = finishSpark.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -546,7 +550,9 @@
 			children = (
 				5ED7488627F9211C00057108 /* BreakoutScene.swift */,
 				5EDCC6C027FA73D300C0DD48 /* BreakoutGameOverScene.swift */,
+				5EDCC6C627FBA6DB00C0DD48 /* BreakoutFinishScene.swift */,
 				5EDCC6C227FA7E8D00C0DD48 /* fire.sks */,
+				5EDCC6C827FBA8D800C0DD48 /* finishSpark.sks */,
 				5EDCC6C327FA7E8D00C0DD48 /* Assets.xcassets */,
 			);
 			path = Views;
@@ -632,6 +638,7 @@
 				5EDCC6C427FA7E8D00C0DD48 /* fire.sks in Resources */,
 				5ED4CCC327DFDBC800591932 /* Assets.xcassets in Resources */,
 				5EC1FF7627F101E5007C101B /* GoogleService-Info.plist in Resources */,
+				5EDCC6C927FBA8D800C0DD48 /* finishSpark.sks in Resources */,
 				5EDCC6C527FA7E8D00C0DD48 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -675,6 +682,7 @@
 				5EC1FF4227EB9BD2007C101B /* RegistrationService.swift in Sources */,
 				5EDCC6C127FA73D300C0DD48 /* BreakoutGameOverScene.swift in Sources */,
 				5EC1FF4B27EBC2F9007C101B /* SessionService.swift in Sources */,
+				5EDCC6C727FBA6DB00C0DD48 /* BreakoutFinishScene.swift in Sources */,
 				5ED7485827F4CEFA00057108 /* GameCategoryView.swift in Sources */,
 				5EC1FF3927EB8E84007C101B /* RegisterView.swift in Sources */,
 				5EBB049A27E3A7690056CD58 /* LoadingView.swift in Sources */,

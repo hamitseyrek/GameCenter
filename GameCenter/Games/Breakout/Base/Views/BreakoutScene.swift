@@ -16,6 +16,8 @@ class BreakoutGameScene: SKScene, SKPhysicsContactDelegate {
     let paddel = SKSpriteNode(imageNamed: "breakoutPaddle")
     let ball = SKSpriteNode(imageNamed: "breakoutBall")
     
+    var stoneCounter = 0
+    
     enum bitmasks: UInt32 {
         case frame = 0b1
         case paddel = 0b10
@@ -92,7 +94,7 @@ class BreakoutGameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.isPaused = false
     }
     
@@ -144,6 +146,11 @@ class BreakoutGameScene: SKScene, SKPhysicsContactDelegate {
         if contactA.categoryBitMask == bitmasks.stone.rawValue && contactB.categoryBitMask == bitmasks.ball.rawValue {
             
              contactA.node?.removeFromParent() // contactA = Stone
+            stoneCounter += 1
+            
+            if stoneCounter == 21 {
+                finishGame()
+            }
         }
         
         if contactA.categoryBitMask == bitmasks.paddel.rawValue && contactB.categoryBitMask == bitmasks.ball.rawValue {
@@ -168,8 +175,16 @@ class BreakoutGameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func gameOver() {
+        
         let gameOverScene = BreakoutGameOverScene(size: self.size)
         let transition = SKTransition.flipHorizontal(withDuration: 2)
         self.view?.presentScene(gameOverScene, transition: transition)
+    }
+    
+    func finishGame() {
+        
+        let finishScene = BreakoutFinishScene(size: self.size)
+        let transition = SKTransition.doorsCloseHorizontal(withDuration: 2)
+        self.view?.presentScene (finishScene, transition: transition)
     }
 }
