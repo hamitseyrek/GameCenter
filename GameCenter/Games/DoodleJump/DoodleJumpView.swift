@@ -11,7 +11,7 @@ import SpriteKit
 class DoodleStartScene: SKScene {
     
     override func didMove(to view: SKView) {
-        
+        backgroundColor = UIColor(.blue).withAlphaComponent(0.2)
          self.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         scene?.scaleMode = .aspectFill
     }
@@ -24,7 +24,7 @@ class DoodleStartScene: SKScene {
                             
             if starNode.name  == "doodleStartButton" {
                 let game = DoodleGameScene(size: self.size)
-                let transition = SKTransition.doorway (withDuration: 3)
+                let transition = SKTransition.doorway(withDuration: 3)
                              
                 self.view?.presentScene (game, transition:
                     transition)
