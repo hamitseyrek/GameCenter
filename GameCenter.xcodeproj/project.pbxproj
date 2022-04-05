@@ -68,6 +68,8 @@
 		5EDCC6C727FBA6DB00C0DD48 /* BreakoutFinishScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDCC6C627FBA6DB00C0DD48 /* BreakoutFinishScene.swift */; };
 		5EDCC6C927FBA8D800C0DD48 /* finishSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5EDCC6C827FBA8D800C0DD48 /* finishSpark.sks */; };
 		5EDCC6CD27FBAFB100C0DD48 /* DoodleJumpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDCC6CC27FBAFB100C0DD48 /* DoodleJumpView.swift */; };
+		5EDCC6D027FBB6D200C0DD48 /* DoodleStartScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5EDCC6CF27FBB6D100C0DD48 /* DoodleStartScene.sks */; };
+		5EDCC6D427FBC13400C0DD48 /* DoodleGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDCC6D327FBC13400C0DD48 /* DoodleGameScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -127,6 +129,8 @@
 		5EDCC6C627FBA6DB00C0DD48 /* BreakoutFinishScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakoutFinishScene.swift; sourceTree = "<group>"; };
 		5EDCC6C827FBA8D800C0DD48 /* finishSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = finishSpark.sks; sourceTree = "<group>"; };
 		5EDCC6CC27FBAFB100C0DD48 /* DoodleJumpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleJumpView.swift; sourceTree = "<group>"; };
+		5EDCC6CF27FBB6D100C0DD48 /* DoodleStartScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DoodleStartScene.sks; sourceTree = "<group>"; };
+		5EDCC6D327FBC13400C0DD48 /* DoodleGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleGameScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -540,6 +544,8 @@
 		5EDCC6CE27FBAFB600C0DD48 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5EDCC6CF27FBB6D100C0DD48 /* DoodleStartScene.sks */,
+				5EDCC6D327FBC13400C0DD48 /* DoodleGameScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -613,6 +619,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EDCC6D027FBB6D200C0DD48 /* DoodleStartScene.sks in Resources */,
 				5ED4CCC627DFDBC800591932 /* Preview Assets.xcassets in Resources */,
 				5EDCC6C427FA7E8D00C0DD48 /* fire.sks in Resources */,
 				5ED4CCC327DFDBC800591932 /* Assets.xcassets in Resources */,
@@ -650,6 +657,7 @@
 				5EC1FF4427EBBE21007C101B /* RegistrationViewModel.swift in Sources */,
 				5EC1FF3D27EB9553007C101B /* ForgotPasswordView.swift in Sources */,
 				5ED7485C27F7A99400057108 /* TabItem.swift in Sources */,
+				5EDCC6D427FBC13400C0DD48 /* DoodleGameScene.swift in Sources */,
 				5ED7485027F38E9900057108 /* TextStyleGuide.swift in Sources */,
 				5ED7485427F399C100057108 /* WelcomeHeaderView.swift in Sources */,
 				5EC1FF4827EBC28E007C101B /* SessionUserDetails.swift in Sources */,
