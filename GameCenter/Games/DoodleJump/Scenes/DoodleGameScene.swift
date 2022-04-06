@@ -15,6 +15,8 @@ class DoodleGameScene: SKScene, SKPhysicsContactDelegate {
     let ground = SKSpriteNode(imageNamed: "doodlePlatform")
     let platform = SKSpriteNode(imageNamed: "doodleMainPlatform")
     
+    let cam = SKCameraNode()
+    
     enum bitmasks: UInt32 {
         case player = 0b1
         case platform = 0b10
@@ -58,6 +60,15 @@ class DoodleGameScene: SKScene, SKPhysicsContactDelegate {
         addChild (player)
         
         makePlatform()
+        
+        cam.setScale(1)
+        camera = cam
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        cam.position = CGPoint(x: player.position.x, y: player.position.y)
+        background.position.x = player.position.x
+        background.position.y = player.position.y
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -76,7 +87,8 @@ class DoodleGameScene: SKScene, SKPhysicsContactDelegate {
         if contactA.categoryBitMask == bitmasks.player.rawValue && contactB.categoryBitMask == bitmasks.platform.rawValue {
             
             if player.physicsBody!.velocity.dy < 0 {
-                player.physicsBody?.velocity = CGVector(dx: player.physicsBody!.velocity.dx, dy: 700)
+                player.physicsBody?.velocity = CGVector(dx: player.physicsBody!.velocity.dx, dy: 1000)
+                makePlatform2()
             }
         }
     }
@@ -109,5 +121,23 @@ class DoodleGameScene: SKScene, SKPhysicsContactDelegate {
         platform.physicsBody?.collisionBitMask = 0
         platform.physicsBody?.contactTestBitMask = bitmasks.player.rawValue
         addChild (platform)
+    }
+    
+    func makePlatform2() {
+        
+        let platform2 = SKSpriteNode(imageNamed: "doodleMainPlatform")
+        
+        platform2.position = CGPoint(x: size.width / 2, y: size.height / 4 + player.position.y)
+        platform2.zPosition = 5
+        platform2.size.width = platform2.size.width
+        platform2.size.height = platform2.size.height / 4
+        platform2.physicsBody = SKPhysicsBody(rectangleOf: platform.size)
+        platform2.physicsBody?.isDynamic = false
+        platform2.physicsBody?.allowsRotation = false
+        platform2.physicsBody?.affectedByGravity = false
+        platform2.physicsBody?.categoryBitMask = bitmasks.platform.rawValue
+        platform2.physicsBody?.collisionBitMask = 0
+        platform2.physicsBody?.contactTestBitMask = bitmasks.player.rawValue
+        addChild (platform2)
     }
 }
