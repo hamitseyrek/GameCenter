@@ -21,7 +21,7 @@ class DoodleStartScene: SKScene {
         for touch in touches {
             let location = touch.location(in: self)
             let starNode = atPoint(location)
-                            
+            
             if starNode.name  == "doodleStartButton" {
                 let game = DoodleGameScene(size: self.size)
                 let transition = SKTransition.doorway(withDuration: 3)
