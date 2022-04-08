@@ -14,6 +14,7 @@ class DoodleGameScene: SKScene, SKPhysicsContactDelegate {
     let background = SKSpriteNode(imageNamed: "doodleBackground")
     let player = SKSpriteNode(imageNamed: "doodle")
     let ground = SKSpriteNode(imageNamed: "doodlePlatform")
+    let gameOverLine = SKSpriteNode(color: .red, size: CGSize(width: 700, height: 10))
     var firstTouch = false
     
     let cam = SKCameraNode()
@@ -21,6 +22,7 @@ class DoodleGameScene: SKScene, SKPhysicsContactDelegate {
     enum bitmasks: UInt32 {
         case player = 0b1
         case platform = 0b10
+        case gameOverLine = 0b100
     }
     
     override func didMove(to view: SKView) {
@@ -60,6 +62,15 @@ class DoodleGameScene: SKScene, SKPhysicsContactDelegate {
         player.physicsBody?.contactTestBitMask = bitmasks.platform.rawValue
         addChild (player)
         
+        gameOverLine.position = CGPoint(x: player.position.x, y: player.position.y - 200)
+        gameOverLine.zPosition = 10
+        gameOverLine.physicsBody = SKPhysicsBody(rectangleOf: gameOverLine.size)
+        gameOverLine.physicsBody?.affectedByGravity = false
+        gameOverLine.physicsBody?.allowsRotation = false
+        gameOverLine.physicsBody?.categoryBitMask = bitmasks.gameOverLine.rawValue
+        gameOverLine.physicsBody?.contactTestBitMask = bitmasks.platform.rawValue
+        addChild(gameOverLine)
+        
         makePlatform()
         makePlatform2()
         makePlatform3()
@@ -73,9 +84,13 @@ class DoodleGameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func update(_ currentTime: TimeInterval) {
+        
         cam.position.y = player.position.y + 250
-        background.position.x = player.position.x
+        
+        //background.position.x = player.position.x
         background.position.y = player.position.y
+        
+        gameOverLine.position.y = player.position.y - 200
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -89,6 +104,10 @@ class DoodleGameScene: SKScene, SKPhysicsContactDelegate {
         } else {
             contactA = contact.bodyB // player
             contactB = contact.bodyA // platform
+        }
+        
+        if contactB.categoryBitMask == bitmasks.gameOverLine.rawValue && contactA.categoryBitMask == bitmasks.platform.rawValue {
+            contactA.node?.removeFromParent()
         }
         
         if contactA.categoryBitMask == bitmasks.player.rawValue && contactB.categoryBitMask == bitmasks.platform.rawValue {
@@ -123,7 +142,7 @@ class DoodleGameScene: SKScene, SKPhysicsContactDelegate {
     func makePlatform() {
         
         let platform = SKSpriteNode(imageNamed: "doodleMainPlatform")
-        platform.position = CGPoint(x: GKRandomDistribution(lowestValue: 70, highestValue: 100).nextInt(), y: GKRandomDistribution(lowestValue: 140, highestValue: 300).nextInt() + Int(player.position.y))
+        platform.position = CGPoint(x: GKRandomDistribution(lowestValue: 70, highestValue: 700).nextInt(), y: GKRandomDistribution(lowestValue: 140, highestValue: 300).nextInt() + Int(player.position.y))
         platform.zPosition = 5
         platform.size.width = platform.size.width
         platform.size.height = platform.size.height / 4
@@ -140,7 +159,7 @@ class DoodleGameScene: SKScene, SKPhysicsContactDelegate {
     func makePlatform2() {
         
         let platform = SKSpriteNode(imageNamed: "doodleMainPlatform")
-        platform.position = CGPoint(x: GKRandomDistribution(lowestValue: 70, highestValue: 600).nextInt(), y: GKRandomDistribution(lowestValue: 350, highestValue: 550).nextInt() + Int(player.position.y))
+        platform.position = CGPoint(x: GKRandomDistribution(lowestValue: 70, highestValue: 700).nextInt(), y: GKRandomDistribution(lowestValue: 350, highestValue: 550).nextInt() + Int(player.position.y))
         platform.zPosition = 5
         platform.setScale(0.4)
         platform.size.width = platform.size.width
@@ -158,7 +177,7 @@ class DoodleGameScene: SKScene, SKPhysicsContactDelegate {
     func makePlatform3() {
         
         let platform = SKSpriteNode(imageNamed: "doodleMainPlatform")
-        platform.position = CGPoint(x: GKRandomDistribution(lowestValue: 70, highestValue: 600).nextInt(), y: GKRandomDistribution(lowestValue: 600, highestValue: 800).nextInt() + Int(player.position.y))
+        platform.position = CGPoint(x: GKRandomDistribution(lowestValue: 70, highestValue: 700).nextInt(), y: GKRandomDistribution(lowestValue: 600, highestValue: 800).nextInt() + Int(player.position.y))
         platform.zPosition = 5
         platform.setScale(0.4)
         platform.size.width = platform.size.width
