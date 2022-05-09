@@ -59,7 +59,7 @@ class DoodleGameScene: SKScene, SKPhysicsContactDelegate {
         player.setScale(0.5)
         player.physicsBody?.categoryBitMask = bitmasks.player.rawValue
         player.physicsBody?.collisionBitMask = 0
-        player.physicsBody?.contactTestBitMask = bitmasks.platform.rawValue
+        player.physicsBody?.contactTestBitMask = bitmasks.platform.rawValue | bitmasks.gameOverLine.rawValue
         addChild (player)
         
         gameOverLine.position = CGPoint(x: player.position.x, y: player.position.y - 200)
@@ -68,7 +68,7 @@ class DoodleGameScene: SKScene, SKPhysicsContactDelegate {
         gameOverLine.physicsBody?.affectedByGravity = false
         gameOverLine.physicsBody?.allowsRotation = false
         gameOverLine.physicsBody?.categoryBitMask = bitmasks.gameOverLine.rawValue
-        gameOverLine.physicsBody?.contactTestBitMask = bitmasks.platform.rawValue
+        gameOverLine.physicsBody?.contactTestBitMask = bitmasks.platform.rawValue | bitmasks.player.rawValue
         addChild(gameOverLine)
         
         makePlatform()
@@ -90,7 +90,9 @@ class DoodleGameScene: SKScene, SKPhysicsContactDelegate {
         //background.position.x = player.position.x
         background.position.y = player.position.y
         
-        gameOverLine.position.y = player.position.y - 200
+        if player.physicsBody!.velocity.dy > 0 {
+            gameOverLine.position.y = player.position.y - 200
+        }
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -114,9 +116,14 @@ class DoodleGameScene: SKScene, SKPhysicsContactDelegate {
             
             if player.physicsBody!.velocity.dy < 0 {
                 player.physicsBody?.velocity = CGVector(dx: player.physicsBody!.velocity.dx, dy: 1400)
+                contactB.node?.removeFromParent()
                 makePlatform5()
                 makePlatform6()
             }
+        }
+        
+        if contactA.categoryBitMask == bitmasks.player.rawValue && contactB.categoryBitMask == bitmasks.gameOverLine.rawValue {
+            gameOver()
         }
     }
     
@@ -244,5 +251,13 @@ class DoodleGameScene: SKScene, SKPhysicsContactDelegate {
         platform.physicsBody?.collisionBitMask = 0
         platform.physicsBody?.contactTestBitMask = bitmasks.player.rawValue
         addChild (platform)
+    }
+    
+    func gameOver() {
+        
+        let gameOverscene = DoodleGameOverScene(size: self.size)
+        let transition = SKTransition.crossFade(withDuration: 0.5)
+        
+        view?.presentScene(gameOverscene, transition: transition)
     }
 }

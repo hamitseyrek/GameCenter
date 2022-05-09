@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E4C1C05282991B500CFB149 /* DoodleGameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C1C04282991B500CFB149 /* DoodleGameOverScene.swift */; };
 		5EBB049627E2426B0056CD58 /* GameSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB049527E2426B0056CD58 /* GameSquareView.swift */; };
 		5EBB049827E2427E0056CD58 /* PlayerIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB049727E2427E0056CD58 /* PlayerIndicatorView.swift */; };
 		5EBB049A27E3A7690056CD58 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB049927E3A7690056CD58 /* LoadingView.swift */; };
@@ -73,6 +74,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E4C1C04282991B500CFB149 /* DoodleGameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleGameOverScene.swift; sourceTree = "<group>"; };
 		5EBB049527E2426B0056CD58 /* GameSquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSquareView.swift; sourceTree = "<group>"; };
 		5EBB049727E2427E0056CD58 /* PlayerIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerIndicatorView.swift; sourceTree = "<group>"; };
 		5EBB049927E3A7690056CD58 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -546,6 +548,7 @@
 			children = (
 				5EDCC6CF27FBB6D100C0DD48 /* DoodleStartScene.sks */,
 				5EDCC6D327FBC13400C0DD48 /* DoodleGameScene.swift */,
+				5E4C1C04282991B500CFB149 /* DoodleGameOverScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -652,6 +655,7 @@
 				5ED7484C27F387D800057108 /* CardView.swift in Sources */,
 				5EC1FF4F27EE146A007C101B /* LoginService.swift in Sources */,
 				5ED4CCCD27E0E4DC00591932 /* GameView.swift in Sources */,
+				5E4C1C05282991B500CFB149 /* DoodleGameOverScene.swift in Sources */,
 				5EC1FF5127EE49F9007C101B /* ForgotPasswordService.swift in Sources */,
 				5EBB049627E2426B0056CD58 /* GameSquareView.swift in Sources */,
 				5EC1FF4427EBBE21007C101B /* RegistrationViewModel.swift in Sources */,
