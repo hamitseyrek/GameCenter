@@ -14,8 +14,15 @@ class DoodleGameScene: SKScene, SKPhysicsContactDelegate {
     let background = SKSpriteNode(imageNamed: "doodleBackground")
     let player = SKSpriteNode(imageNamed: "doodle")
     let ground = SKSpriteNode(imageNamed: "doodlePlatform")
-    let gameOverLine = SKSpriteNode(color: .red, size: CGSize(width: 700, height: 10))
+    let gameOverLine = SKSpriteNode(color: .red, size: CGSize(width: 1000, height: 10))
     var firstTouch = false
+    let scoreLabel = SKLabelNode()
+    let bestScoreLabel = SKLabelNode()
+    
+    var defauls = UserDefaults.standard
+    
+    var score = 0
+    var bestScore = 0
     
     let cam = SKCameraNode()
     
@@ -63,13 +70,30 @@ class DoodleGameScene: SKScene, SKPhysicsContactDelegate {
         addChild (player)
         
         gameOverLine.position = CGPoint(x: player.position.x, y: player.position.y - 200)
-        gameOverLine.zPosition = 10
+        gameOverLine.zPosition = -1
         gameOverLine.physicsBody = SKPhysicsBody(rectangleOf: gameOverLine.size)
         gameOverLine.physicsBody?.affectedByGravity = false
         gameOverLine.physicsBody?.allowsRotation = false
         gameOverLine.physicsBody?.categoryBitMask = bitmasks.gameOverLine.rawValue
         gameOverLine.physicsBody?.contactTestBitMask = bitmasks.platform.rawValue | bitmasks.player.rawValue
         addChild(gameOverLine)
+        
+        scoreLabel.position.x=100
+        scoreLabel.zPosition=20
+        scoreLabel.fontColor = .black
+        scoreLabel.fontSize = 32
+        scoreLabel.fontName = "Chalkduster"
+        scoreLabel.text = "Score: \(score)"
+        addChild(scoreLabel)
+        
+        bestScore = defauls.integer(forKey: "best")
+        bestScoreLabel.position.x = 100
+        bestScoreLabel.zPosition=20
+        bestScoreLabel.fontColor = .black
+        bestScoreLabel.fontSize = 32
+        bestScoreLabel.fontName = "Chalkduster"
+        bestScoreLabel.text = "Best Score: \(bestScore)"
+        addChild(bestScoreLabel)
         
         makePlatform()
         makePlatform2()
@@ -93,6 +117,8 @@ class DoodleGameScene: SKScene, SKPhysicsContactDelegate {
         if player.physicsBody!.velocity.dy > 0 {
             gameOverLine.position.y = player.position.y - 200
         }
+        
+        scoreLabel.position.y = player.position.y + 600
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -119,6 +145,7 @@ class DoodleGameScene: SKScene, SKPhysicsContactDelegate {
                 contactB.node?.removeFromParent()
                 makePlatform5()
                 makePlatform6()
+                addScore()
             }
         }
         
@@ -259,5 +286,16 @@ class DoodleGameScene: SKScene, SKPhysicsContactDelegate {
         let transition = SKTransition.crossFade(withDuration: 0.5)
         
         view?.presentScene(gameOverscene, transition: transition)
+        
+        if score > bestScore {
+            bestScore = score
+            
+            defauls.set(bestScore, forKey: "best")
+        }
+    }
+    
+    func addScore(){
+        score += 1
+        scoreLabel.text="Score: \(score)"
     }
 }
